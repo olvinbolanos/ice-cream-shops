@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import {withRouter} from 'react-router-dom'
 import { withFirebase } from '../Firebase'
+import SearchForm from '../SearchForm';
+import RestaurantList from '../ShopList';
 
 class Home extends Component {
   state = {
@@ -24,6 +26,12 @@ class Home extends Component {
       })
     }
 
+    onFormSubmit = (searchLocationQuery) => {
+      this.setState({
+        searchLocationQuery: searchLocationQuery
+      })
+    }
+
   render() {
     console.log(this.props.firebase.userId)
     return (
@@ -31,6 +39,9 @@ class Home extends Component {
         <div>This is Firebase and stuff</div>
         <h1>this is the username {this.state.user.username}</h1>
         <h2>This is the email {this.state.user.email}</h2>
+        <SearchForm onFormSubmit = {this.onFormSubmit}/>
+        <RestaurantList 
+          searchLocationQuery = {this.state.searchLocationQuery}/> 
       </div>
     )
   }

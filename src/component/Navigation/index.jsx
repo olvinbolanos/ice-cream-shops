@@ -40,6 +40,9 @@ const Navigation = ({authUser}) => (
             <li>
                 <NavLink to={ROUTES.SIGN_UP}>Sign up</NavLink>
             </li>
+            {/* <li>
+                {authUser.username ? <NavigationAuth authUser={} />}
+            </li> */}
         </ul>
     )
 
