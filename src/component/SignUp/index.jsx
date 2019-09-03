@@ -26,13 +26,12 @@ class SignUpFormBase extends Component {
         this.props.firebase
           .doCreateUserWithEmailAndPassword(email, passwordOne)
           .then(authUser => {
-            return this.props.firebase 
-              .user(authUser.user.uid)
-              .set({
-                  username, 
-                  email
-              })
+            return this.props.firebase.db.collection('users').doc(authUser.user.uid).set({
+                username,
+                email
+            }) 
             }
+            // this firestore creates a username or email if it doesn't exist yet in cloud
           ).then(()=> {
               this.props.history.push(ROUTES.HOME)
           })
