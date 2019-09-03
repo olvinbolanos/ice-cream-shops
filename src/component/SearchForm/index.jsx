@@ -29,7 +29,7 @@ class SearchForm extends Component {
                     htmlFor = 'location'
                     arialabel = 'enter address, neighbourhood, city, province or postal code'
                     className = 'searchForm__label'
-                    >I am looking for brunch spots near</label>
+                    >I am looking for icecream spots nearby</label>
                     <input 
                     type = 'text'
                     id = 'location'

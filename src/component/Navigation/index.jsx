@@ -4,10 +4,9 @@ import { NavLink } from 'react-router-dom'
 import SignOutButton from '../SignOut'
 import * as ROUTES from '../../constants/routes'
 
-console.log('routes ', ROUTES)
 const Navigation = ({authUser}) => (
     <div>
-        {authUser ? <NavigationAuth /> : <NavigationNonAuth />}
+        {authUser ? <NavigationAuth authUser={authUser}/> : <NavigationNonAuth />}
     </div>
 )
 
@@ -23,7 +22,7 @@ const Navigation = ({authUser}) => (
             <NavLink to={ROUTES.ACCOUNT}>Account</NavLink>
         </li>
         <li>
-           <SignOutButton />
+           {authUser.username}  <SignOutButton />
         </li>
     </ul>
 )
@@ -40,9 +39,7 @@ const Navigation = ({authUser}) => (
             <li>
                 <NavLink to={ROUTES.SIGN_UP}>Sign up</NavLink>
             </li>
-            {/* <li>
-                {authUser.username ? <NavigationAuth authUser={} />}
-            </li> */}
+            
         </ul>
     )
 
