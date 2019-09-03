@@ -15,9 +15,9 @@ class ShopList extends Component {
       }
     }
 
-    // componentDidMount() {
-    //     this.getShopFromApi('California')
-    // }
+    componentDidMount() {
+        this.getShopFromApi('California')
+    }
 
     componentDidUpdate(prevProps, prevState) {
         if(this.props.searchLocationQuery !== prevProps.searchLocationQuery) {
@@ -39,15 +39,13 @@ class ShopList extends Component {
         axios.get(`${'https://cors-anywhere.herokuapp.com/'}https://api.yelp.com/v3/businesses/search?location=${locationSearched}`, {
             // required authorization format from API 
             headers: {
-               
-                
-                
                 //to get the API from the .env file use process.env.{variable name}
                 Authorization: `Bearer ${process.env.REACT_APP_YELP_KEY}`,
             },
             // option params passed to API call to retrieve only breakfast and lunch spots 
             params: {
                 categories: 'icecream',
+                sort_by: 'rating'
             }
             })
             
