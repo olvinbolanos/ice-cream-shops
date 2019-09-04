@@ -11,36 +11,36 @@ const Navigation = ({authUser}) => (
 )
 
   const NavigationAuth = ({authUser}) => (
-    <ul>
-        <li>
-            <NavLink to={ROUTES.LANDING}>Landing</NavLink>
-        </li>
-        <li>
-            <NavLink to={ROUTES.HOME}>Home</NavLink>
-        </li>
-        <li>
-            <NavLink to={ROUTES.ACCOUNT}>Account</NavLink>
-        </li>
-        <li>
-           {authUser.username}  <SignOutButton />
-        </li>
-    </ul>
+
+    <div className="ui menu">
+        <div className="item">
+            <div className="ui primary button"><NavLink to={ROUTES.LANDING}>Landing</NavLink></div>
+        </div>
+        <div className="item">
+            <div className="ui button"><NavLink to={ROUTES.HOME}>Home</NavLink></div>
+        </div>
+        <div className="item">
+            <div className="ui button"><NavLink to={ROUTES.ACCOUNT}>Account</NavLink></div>
+        </div>
+        <div className="item">
+            {authUser.username} <SignOutButton />
+        </div>
+    </div>
 )
 
 
     const NavigationNonAuth = () => (
-        <ul>
-            <li>
-                <NavLink to={ROUTES.LANDING}>Landing</NavLink>
-            </li>
-            <li>
-                <NavLink to={ROUTES.SIGN_IN}>Sign in</NavLink>
-            </li>
-            <li>
-                <NavLink to={ROUTES.SIGN_UP}>Sign up</NavLink>
-            </li>
-            
-        </ul>
+        <div className="ui menu">
+            <div className="item">
+                <div className="ui primary button"><NavLink to={ROUTES.LANDING}>Landing</NavLink></div>
+            </div>
+            <div className="item">
+                <div className="ui button"><NavLink to={ROUTES.SIGN_IN}>Sign in</NavLink></div>
+            </div>
+            <div className="item">
+                <div className="ui button"><NavLink to={ROUTES.SIGN_UP}>Sign up</NavLink></div>
+            </div>
+        </div>
     )
 
 

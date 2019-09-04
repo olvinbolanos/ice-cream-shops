@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import axios from 'axios';
+import 'semantic-ui-css/semantic.min.css';
 
 
 class ShopList extends Component {
@@ -68,20 +69,30 @@ class ShopList extends Component {
     }
 
     renderShopsInfo() {
-        const ShopList = this.state.results.map((result) => {
+        const ShopList = this.state.results.map((result, i) => {
             return (
-               console.log(result, '<===coming from renderShops')
+              <div className="shopsInfo" key={i}>
+                  <h2 className="heading">{result.name}</h2>
+                  <img className="ui medium bordered image" src={result.image_url} alt="" />
+                  <p>Rating for this Ice cream shop: <i>{result.rating}</i></p>
+                  <p>{result.location.display_address[0]}, {result.location.display_address[1]}</p>
+                  <p>{result.phone}</p>
+                  <a href={result.url} className="iceCreamInfo">More Information on Yelp about {result.name}</a>
+              </div>
+              
             )
+            
         })
 
         return (
             <div className="ShopList">{ShopList}</div>
+            
         )
     }
 
     render() {
         return (
-            <section className="ShopList">
+            <section>
                 {this.state.results.length ? this.renderShopsInfo() : this.renderEmptyState()}
 
                 {/*conditional rendering for error state - when this.state.errorState is not true*/}

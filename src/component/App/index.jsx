@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import { Route, Switch } from 'react-router-dom'
-
 import Navigation from '../Navigation'
 import LandingPage from '../Landing'
 import SignUpPage from '../SignUp'

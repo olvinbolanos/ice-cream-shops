@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import 'semantic-ui-css/semantic.min.css';
+import '../../App.css'
 
 class SearchForm extends Component {
     constructor() {
@@ -29,21 +31,21 @@ class SearchForm extends Component {
                     htmlFor = 'location'
                     arialabel = 'enter address, neighbourhood, city, province or postal code'
                     className = 'searchForm__label'
-                    >I am looking for icecream spots nearby</label>
-                    <input 
-                    type = 'text'
-                    id = 'location'
-                    placeholder = 'address, neighbourhood, city, province or postal code'
-                    value = {this.state.searchLocationQuery}
+                    >I am looking for icecream spots nearby: </label>
+                    
+                    
+                    <div className="ui icon input">
+                    <i className="search icon"></i>
+                    <input type="text" 
+                    id="location" 
+                    placeholder="Type here..." 
+                    value = {this.state.searchLocationQuery} 
                     onChange = {this.handleSearchChange}
-                    className = 'searchForm__input'
                     />
-                    <button 
-                    type = 'submit'
-                    className = 'searchForm__button'
-                    >Search
-                    </button>
+                    </div>
+                    <button className="ui primary button" type = 'submit'>Submit</button>
                 </form>
+                
             </div>
         );
     }

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Frank+Ruhl+Libre&display=swap');
+
 .App {
   text-align: center;
 }
@@ -30,4 +32,28 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.searchForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#root > div > div:nth-child(1) > div > div:nth-child(1) > div > a {
+  color: white !important;
+  transition: 500ms all linear;
+}
+
+#root > div > div:nth-child(1) > div > div:nth-child(1) > div > a:hover {
+  color: purple !important;
+}
+
+#root > div > div:nth-child(1) > div > div:hover {
+  background: #2185d0 !important;
+}
+
+.heading_for_user {
+  text-align: center;
+  font-family: 'Frank Ruhl Libre', serif;
 }
