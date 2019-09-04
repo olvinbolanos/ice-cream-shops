@@ -16,20 +16,32 @@ class SignUpFormBase extends Component {
         email: '',
         passwordOne: '',
         passwordTwo: '',
-        error: null
+        error: null,
+        image: null
     }
 
     // catch is used instead of if, else statements
     onSubmit = e => {
-        const { email, passwordOne, username } = this.state
         e.preventDefault()
+        const { email, passwordOne, username, image } = this.state
         this.props.firebase
           .doCreateUserWithEmailAndPassword(email, passwordOne)
           .then(authUser => {
-            return this.props.firebase.db.collection('users').doc(authUser.user.uid).set({
-                username,
-                email
-            }) 
+            if (image) {
+                this.props.firebase.storage.ref('profile').child(image.name).put(image)
+                .then(file => file.ref.getDownloadURL())
+                .then(url => this.props.firebase.db.collection('users').doc(authUser.user.uid)
+                  .set({
+                      username,
+                      email,
+                      image: url
+                  })) 
+            } else {
+                return this.props.firebase.db.collection('users').doc(authUser.user.uid).set({
+                    username,
+                    email
+                })
+            }
             }
             // this firestore creates a username or email if it doesn't exist yet in cloud
           ).then(()=> {
@@ -37,13 +49,15 @@ class SignUpFormBase extends Component {
           })
           .catch(error => {
               this.setState({error})
+              setTimeout(() => this.setState({error: null}))
           })
 
     }
 
     onChange = e => {
         this.setState({
-            [e.target.name] : e.target.value
+            [e.target.name] : e.target.name.includes('image') 
+            ? e.target.files[0] : e.target.value
         })
     }
 
@@ -93,6 +107,10 @@ class SignUpFormBase extends Component {
                   type='password'
                   placeholder='Confirm Password'
                 />
+                <input type="file" 
+                name="image" 
+                accept="image/png, image/jpeg, image/jpg" 
+                onChange={this.onChange} />
 
                 <button type='submit' disabled={isInvalid}>Register</button>
                 {error && error.message}

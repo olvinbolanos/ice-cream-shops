@@ -8,6 +8,7 @@ import PasswordForgetPage from '../PasswordForget'
 import HomePage from '../Home'
 import AccountPage from '../Account'
 import AdminPage from '../Admin'
+import Reviews from '../Reviews'
 import {withFirebase} from '../Firebase'
 
 import * as ROUTES from '../../constants/routes'
@@ -21,9 +22,10 @@ class App extends  Component  {
 
  componentDidMount() {
     this.props.firebase.auth.onAuthStateChanged(authUser => {
-      authUser
-      ? this.props.firebase.db.collection('users').doc(authUser.uid).get().then(snapShot => this.setState({authUser: snapShot.data()})):
-      this.setState({authUser: null})
+      authUser.uid
+      ? this.props.firebase.user(authUser.uid).get()
+          .then(snapShot => this.setState({authUser: snapShot.data()}))
+          : this.setState({authUser: null})
     })
   }
 
@@ -45,6 +47,7 @@ class App extends  Component  {
       }
       <Route exact path={ROUTES.ACCOUNT} component={AccountPage} />
       <Route exact path={ROUTES.ADMIN} component={AdminPage} />
+      <Route exact path={`${ROUTES.REVIEWS}/:id`} component={Reviews} />
     </Switch>
   </div>
   )

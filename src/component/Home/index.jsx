@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {withRouter} from 'react-router-dom'
 import { withFirebase } from '../Firebase'
 import SearchForm from '../SearchForm';
-import RestaurantList from '../ShopList';
+import ShopList from '../ShopList';
 import '../../App.css'
 
 class Home extends Component {
@@ -26,7 +26,7 @@ class Home extends Component {
         <h1 className="heading_for_user">Your Username: { this.props.authUser.username }</h1>
         <h2 className="heading_for_user">Your email: { this.props.authUser.email }</h2>
         <SearchForm onFormSubmit = {this.onFormSubmit}/>
-        <RestaurantList 
+        <ShopList 
           searchLocationQuery = {this.state.searchLocationQuery}/> 
       </div>
     )

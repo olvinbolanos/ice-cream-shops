@@ -1,6 +1,9 @@
 import React, {Component} from 'react'
 import axios from 'axios';
 import 'semantic-ui-css/semantic.min.css';
+import { Link } from 'react-router-dom';
+
+import * as ROUTES from '../../constants/routes'
 
 
 class ShopList extends Component {
@@ -75,13 +78,16 @@ class ShopList extends Component {
                   <h2 className="heading">{result.name}</h2>
                   <img className="ui medium bordered image" src={result.image_url} alt="" />
                   <p>Rating for this Ice cream shop: <i>{result.rating}</i></p>
+                  <p>Would you like to see some reviews from three customers? 
+                      <button>{result.id}</button>
+                      <Link to={`${ROUTES.REVIEWS}/${result.id}`}>Reviews</Link>
+                  </p>
                   <p>{result.location.display_address[0]}, {result.location.display_address[1]}</p>
                   <p>{result.phone}</p>
                   <a href={result.url} className="iceCreamInfo">More Information on Yelp about {result.name}</a>
-              </div>
-              
+                  
+              </div> 
             )
-            
         })
 
         return (
