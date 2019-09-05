@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 
 import * as ROUTES from '../../constants/routes'
 
-
 class ShopList extends Component {
 
     constructor(props) {

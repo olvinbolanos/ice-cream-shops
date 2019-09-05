@@ -16,12 +16,6 @@ class Reviews extends Component {
         }
     }
 
-    handleReviewSubmit = (e) => {
-      e.preventDefault()
-
-      this.props.onButtonPress(this.state.reviews)
-    }
-
     componentDidUpdate(prevProps, prevState) {
         if(this.props.reviewScript !== prevProps.reviewScript) {
             this.setState({
