@@ -3,8 +3,13 @@ const express = require('express')
 
 const app = express()
 
-app.get('/hello', (req, res) => {
-    res.send('hello there')
+app.post('/test', (req, res) => {
+    console.log(req.body)
+})
+
+app.get('/api/v1/get-tacos', async (req, res) => {
+    const yelpAPI = functions.config().yelp.key
+    console.log(yelpAPI)
 })
 
 exports.app = functions.https.onRequest(app)

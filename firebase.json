@@ -17,8 +17,12 @@
     ],
     "rewrites": [
       {
-        "source": "/hello",
+        "source": "/*/*/*",
         "function": "app"
+      },
+      {
+        "source": "**",
+        "destination": "/index.html"
       }
     ]
   },

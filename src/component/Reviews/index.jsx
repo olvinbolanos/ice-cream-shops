@@ -3,8 +3,8 @@ import {withRouter} from 'react-router-dom'
 import {withFirebase} from '../Firebase'
 import axios from 'axios';
 // Build array of months
-const months = ['January', 'February']
-const timeChange = (time) => {}
+const months = ['January', 'February'];
+const timeChange = (time) => {};
 
 class Reviews extends Component {
     constructor(props) {

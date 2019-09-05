@@ -20,7 +20,7 @@ class ShopList extends Component {
     }
 
     componentDidMount() {
-        this.getShopFromApi('California')
+        this.getShopFromApi('Los Angeles, California')
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -47,7 +47,9 @@ class ShopList extends Component {
             // option params passed to API call to retrieve only breakfast and lunch spots 
             params: {
                 categories: 'icecream',
-                sort_by: 'rating'
+                sort_by: 'rating',
+                radius: 10000,
+                latitude: 45.362155597121941
             }
             })
             
