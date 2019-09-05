@@ -54,15 +54,17 @@ class SignUpFormBase extends Component {
 
     }
 
-    onChange = e => {
+    onChange = event => {
         this.setState({
-            [e.target.name] : e.target.name.includes('image') 
-            ? e.target.files[0] : e.target.value
+          [event.target.name] : event.target.name.includes('image') 
+            ? event.target.files[0] 
+            : event.target.value 
         })
     }
 
 
     render() {
+        console.log(this.state)
         const {
             username,
             email,
