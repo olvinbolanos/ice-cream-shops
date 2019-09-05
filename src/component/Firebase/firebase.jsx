@@ -12,7 +12,8 @@ const config = {
   storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
   messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
   appId: process.env.APP_ID,
-  yelpKey: process.env.REACT_APP_YELP_KEY
+  yelpKey: process.env.REACT_APP_YELP_KEY,
+  googleKey: process.env.REACT_APP_GOOGLE_KEY
 };
 
 class Firebase {
