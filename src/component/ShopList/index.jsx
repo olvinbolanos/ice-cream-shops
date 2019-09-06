@@ -84,6 +84,9 @@ class ShopList extends Component {
                       <Link to={`${ROUTES.REVIEWS}/${result.id}`}>Reviews</Link>
                   </p>
                   <p>{result.location.display_address[0]}, {result.location.display_address[1]}</p>
+                  <p>Would you like to find the location of this icecream store?
+                      <Link to={`${ROUTES.MAP}/${result.id}`}>Location On Map</Link>
+                  </p>
                   <p>{result.phone}</p>
                   <a href={result.url} className="iceCreamInfo">More Information on Yelp about {result.name}</a>
                   

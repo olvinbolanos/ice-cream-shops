@@ -9,6 +9,7 @@ import HomePage from '../Home'
 import AccountPage from '../Account'
 import AdminPage from '../Admin'
 import Reviews from '../Reviews'
+import StoresMap from '../StoresMap'
 import {withFirebase} from '../Firebase'
 
 import * as ROUTES from '../../constants/routes'
@@ -48,6 +49,7 @@ class App extends  Component  {
       <Route exact path={ROUTES.ACCOUNT} component={AccountPage} />
       <Route exact path={ROUTES.ADMIN} component={AdminPage} />
       <Route exact path={`${ROUTES.REVIEWS}/:id`} component={Reviews} />
+      <Route exact path={`${ROUTES.MAP}/:id`} component={StoresMap} />
     </Switch>
   </div>
   )
