@@ -7,8 +7,8 @@ import '../../App.css'
 
 
 const style = {
-    width: '60%',
-    height: '60%'
+    width: '50%',
+    height: '50%'
 }
 
 class StoreContainer extends Component {
@@ -45,7 +45,8 @@ class StoreContainer extends Component {
             }
         })
         .then((res) => {
-            this.setState({ storeLocation: res, loading: false })
+            console.log(res.data)
+            this.setState({ storeLocation: res.data, loading: false })
         })
         .catch((err) => {
             this.setState({ errorState: `Sorry, we couldn't find the location you requested, do you want to try some other icecream store?`, loading: false})
@@ -71,7 +72,7 @@ class StoreContainer extends Component {
                 style={style}
                 zoom={5}
                 onClick={this.onMapClicked}>
-                    <Marker position={{lat: storeLocation.data.coordinates.latitude , lng: storeLocation.data.coordinates.longitude}}
+                    <Marker position={{lat: storeLocation.coordinates.latitude , lng: storeLocation.coordinates.longitude}}
                     icon={{
                         // url:'https://png.pngtree.com/element_pic/00/16/10/205808770672059.jpg',
                         anchor: new this.props.google.maps.Point(16,23),
@@ -83,7 +84,33 @@ class StoreContainer extends Component {
         )
             }
             return (
-                <div className="mapContainer">{StoreContainer()}</div>
+                <div>
+                  <div className="mapContainer ">
+                    <div className="backOfMap">
+                    {StoreContainer()}
+                    </div>
+                  </div>
+
+                  {/******* div for information ********/}
+                  <div className="ui segments">
+                    <div class="ui segment">
+                        <p>Name Of Store: {storeLocation.name}</p>
+                    </div>
+                    <div class="ui purple segment">
+                        <p>
+                            Store Address:
+                            {storeLocation.location.address1}, {storeLocation.location.city}, {storeLocation.location.state}, {storeLocation.location.zip_code}
+                        </p>
+                    </div>
+                    <div class="ui red segment">
+                        <p>Phone number: {storeLocation.phone}</p>
+                    </div>
+                    <div class="ui blue segment">
+                        <p>Rating: {storeLocation.rating}</p>
+                    </div>
+                    
+                    </div>
+                </div>
             )
         }
 

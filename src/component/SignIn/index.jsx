@@ -9,6 +9,7 @@ const SignIn = () => (
     <h1>SignIn</h1>
     <SignInForm />
     <SignUpLink />
+    <ForgotPasswordLink />
   </div>
 )
 
@@ -64,8 +65,15 @@ class SignInFormBase extends Component {
 const SignInForm = withRouter(withFirebase(SignInFormBase))
 
 const SignUpLink = () => (
+    <p>
+      Don't have an account? <NavLink exact to={ROUTES.SIGN_UP}>Sign Up</NavLink>
+    </p>
+)
+
+const ForgotPasswordLink = () => (
   <p>
-    Don't have an account? <NavLink exact to={ROUTES.SIGN_UP}>Sign Up</NavLink>
+    Don't remember your password. That's fine, 
+      <NavLink exact to={ROUTES.PASSWORD_FORGET}>Click here</NavLink>
   </p>
 )
 export default SignIn

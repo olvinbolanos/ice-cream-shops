@@ -62,12 +62,28 @@
   padding-top: 2em;
   padding-left: 2em;
   overflow: hidden;
+  background:url("https://www.wichitabyeb.com/wp-content/uploads/2019/02/img_3864.jpg");
+  background-repeat: none;
 }
-
 
 .storeContainer {
   height: 400px;
-  width: 100%;
+  width: 60%;
   padding-top: 2em;
   padding-right: 2em;
+}
+
+.ui.segments {
+  width: 50%;
+  margin: 1.5em auto;
+  border: 1px solid rgba(34,36,38,.15);
+  box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+  border-radius: .28571429rem;
+  position: relative;
+  display: block;
+  box-sizing: none !important;
+}
+
+#root > div > div:nth-child(3) > div > form > div > input{
+  width: 40%;
 }
