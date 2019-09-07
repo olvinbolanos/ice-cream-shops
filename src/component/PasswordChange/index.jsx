@@ -44,6 +44,7 @@ class PasswordChangeFormBase extends Component {
 
     render() {
         const {passwordOne, passwordTwo, error} = this.state
+        
         return (
           <div>
             <h1>Do you want to change your password?</h1>

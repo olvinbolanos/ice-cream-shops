@@ -41,7 +41,7 @@ class App extends  Component  {
       <Route exact path={ROUTES.SIGN_IN} component={SignInPage} />
       <Route exact path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage} /> 
       {
-        this.state.authUser ?
+        authUser ?
         <Route exact path={ROUTES.HOME} render={() => <HomePage authUser={this.state.authUser}/> }/>
         : null
       }
