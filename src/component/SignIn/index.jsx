@@ -38,7 +38,6 @@ class SignInFormBase extends Component {
 
   render() {
     const { email, password, error } = this.state
-    console.log(this.props)
     return (
       <form onSubmit={this.onSubmit}>
         <input 

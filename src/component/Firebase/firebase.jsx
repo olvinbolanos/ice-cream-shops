@@ -16,6 +16,8 @@ const config = {
   googleKey: process.env.REACT_APP_GOOGLE_KEY
 };
 
+
+
 class Firebase {
   constructor() {
     app.initializeApp(config)
@@ -23,6 +25,7 @@ class Firebase {
     this.db = app.firestore()
     this.storage = app.storage()
   }
+
 
   doCreateUserWithEmailAndPassword = (email, password) => 
     this.auth.createUserWithEmailAndPassword(email, password)

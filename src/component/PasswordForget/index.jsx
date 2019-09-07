@@ -7,8 +7,6 @@ import '../../App.css'
 
 import * as ROUTES from '../../constants/routes'
 
-
-
 const PasswordForget = () => (
     <div>
         <PasswordForgetForm />
@@ -50,7 +48,7 @@ class PasswordForgetFormBase extends Component {
             <Form className="ui form" onSubmit={this.onSubmit}>
                 <div className="field">
                     <h2>Enter Your Email Address: </h2>
-                    <input type="email" className="emailForm" autocomplete="off" name="email" onChange={this.onChange} placeholder="Email Address" src="&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6zwAAAgcBApocMXEAAAAASUVORK5CYII=&quot;" />
+                    <input type="email" className="emailForm" autocomplete="off" name={email} onChange={this.onChange} placeholder="Email Address" src="&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6zwAAAgcBApocMXEAAAAASUVORK5CYII=&quot;" />
                 </div>
                 <Button type="submit">Send Email</Button>
                 {error && error.message}

@@ -17,18 +17,19 @@ import * as ROUTES from '../../constants/routes'
 
 class App extends  Component  {
   state = {
-    authUser: null,
-    uid: ''
+    authUser: null
   }
 
- componentDidMount() {
+  
+  async componentDidMount() {
     this.props.firebase.auth.onAuthStateChanged(authUser => {
-      authUser.uid
+      authUser
       ? this.props.firebase.user(authUser.uid).get()
           .then(snapShot => this.setState({authUser: snapShot.data()}))
           : this.setState({authUser: null})
     })
   }
+  
 
   render() {
     const {authUser} = this.state
@@ -43,7 +44,7 @@ class App extends  Component  {
       <Route exact path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage} /> 
       {
         this.state.authUser ?
-        <Route exact path={ROUTES.HOME} render={() => <HomePage authUser={authUser}/> }/>
+        <Route exact path={ROUTES.HOME} render={() => <HomePage authUser={this.state.authUser}/> }/>
         : null
       }
       <Route exact path={ROUTES.ACCOUNT} component={AccountPage} />
