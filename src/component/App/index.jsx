@@ -20,7 +20,6 @@ class App extends  Component  {
     authUser: null
   }
 
-  
   async componentDidMount() {
     this.props.firebase.auth.onAuthStateChanged(authUser => {
       authUser
@@ -30,7 +29,6 @@ class App extends  Component  {
     })
   }
   
-
   render() {
     const {authUser} = this.state
   return (

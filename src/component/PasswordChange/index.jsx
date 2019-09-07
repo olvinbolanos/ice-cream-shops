@@ -7,8 +7,6 @@ import '../../App.css'
 
 import * as ROUTES from '../../constants/routes'
 
-
-
 const PasswordChange = () => (
     <div>
         <PasswordChangeForm />
@@ -45,7 +43,7 @@ class PasswordChangeFormBase extends Component {
     }
 
     render() {
-        const {, error} = this.state
+        const {passwordOne, passwordTwo, error} = this.state
         return (
           <div>
             <h1>Do you want to change your password?</h1>
@@ -57,11 +55,11 @@ class PasswordChangeFormBase extends Component {
                 </div>
                 <div className="field">
                     <h2>Enter Your New Password: </h2>
-                    <input type="password" className="passwordForm" autocomplete="off" name="passwordOne" onChange={this.onChange} placeholder="Enter Your New Password" />
+                    <input type="password" className="passwordForm" autocomplete="off" name={passwordOne} onChange={this.onChange} placeholder="Enter Your New Password" />
                 </div>
                 <div className="field">
                     <h2>Confirm Your New Password: </h2>
-                    <input type="password" className="passwordForm" autocomplete="off" name="passwordTwo" onChange={this.onChange} placeholder="Confirm Password Again" />
+                    <input type="password" className="passwordForm" autocomplete="off" name={passwordTwo} onChange={this.onChange} placeholder="Confirm Password Again" />
                 </div>
                 <Button type="submit">Confirm Request</Button>
                 {error && error.message}
