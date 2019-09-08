@@ -42,10 +42,10 @@ class App extends  Component  {
       <Route exact path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage} /> 
       {
         authUser ?
-        <Route exact path={ROUTES.HOME} render={() => <HomePage authUser={this.state.authUser}/> }/>
+        <Route exact path={ROUTES.HOME} render={() => <HomePage authUser={this.state.authUser} /> }/>
         : null
       }
-      <Route exact path={ROUTES.ACCOUNT} component={AccountPage} />
+      <Route exact path={ROUTES.ACCOUNT}  component={AccountPage} authUser={this.state.authUser} />
       <Route exact path={ROUTES.ADMIN} component={AdminPage} />
       <Route exact path={`${ROUTES.REVIEWS}/:id`} component={Reviews} />
       <Route exact path={`${ROUTES.MAP}/:id`} component={StoresMap} />

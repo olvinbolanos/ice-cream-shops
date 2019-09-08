@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {withRouter} from 'react-router-dom'
 import { withFirebase } from '../Firebase'
 import 'semantic-ui-css/semantic.min.css';
-import { Form, Button } from 'semantic-ui-react'
+import { Form, Button, TextInput, ScrollView } from 'semantic-ui-react'
 import '../../App.css'
 
 import * as ROUTES from '../../constants/routes'
@@ -15,9 +15,9 @@ const PasswordChange = () => (
 
 class PasswordChangeFormBase extends Component {
     state = {
-        oldPassword: '',
-        passwordOne: '',
-        passwordTwo: '',
+        currentPass: '',
+        newPassword: '',
+        confirmPass: '',
         error: null
     }
 
@@ -30,9 +30,9 @@ class PasswordChangeFormBase extends Component {
     onSubmit = e => {
         e.preventDefault()
 
-        const {passwordOne} = this.state
+        const {newPassword} = this.state
         this.props.firebase
-        .doPasswordUpdate(passwordOne)
+        .doPasswordUpdate(newPassword)
         .then(() => 
           this.props.history.push(ROUTES.HOME)
         )
@@ -42,8 +42,18 @@ class PasswordChangeFormBase extends Component {
         })
     }
 
+    async componentDidMount () {
+        this.reauthenticate()
+    }
+
+    reauthenticate = async () => {
+        const user = await this.props.firebase.auth.
+        // const cred = this.props.firebase.doSignInWithEmailAndPassword.credential(user.email, currentPass)
+        console.log(user)
+    }
+
     render() {
-        const {passwordOne, passwordTwo, error} = this.state
+        const {confirmPass, currentPass, newPassword, error} = this.state
         
         return (
           <div>
@@ -52,15 +62,15 @@ class PasswordChangeFormBase extends Component {
             <Form className="ui form" onSubmit={this.onSubmit}>
                 <div className="field">
                     <h2>Enter Your Old Password: </h2>
-                    <input type="password" className="passwordForm" autocomplete="off" name="oldPassword" onChange={this.onChange} placeholder="Type in Your Old Password" src="&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6zwAAAgcBApocMXEAAAAASUVORK5CYII=&quot;" />
+                    <input type="password" className="passwordForm" autocomplete="off" name="currentPass"  value={currentPass} onChange={this.onChange} placeholder="Type in Your Old Password"  />
                 </div>
                 <div className="field">
                     <h2>Enter Your New Password: </h2>
-                    <input type="password" className="passwordForm" autocomplete="off" name={passwordOne} onChange={this.onChange} placeholder="Enter Your New Password" />
+                    <input type="password" className="passwordForm" autocomplete="off" name="newPassword" value={newPassword} onChange={this.onChange} placeholder="Enter Your New Password" />
                 </div>
                 <div className="field">
                     <h2>Confirm Your New Password: </h2>
-                    <input type="password" className="passwordForm" autocomplete="off" name={passwordTwo} onChange={this.onChange} placeholder="Confirm Password Again" />
+                    <input type="password" className="passwordForm" autocomplete="off" name="confirmPass" value={confirmPass} onChange={this.onChange} placeholder="Confirm Password Again" />
                 </div>
                 <Button type="submit">Confirm Request</Button>
                 {error && error.message}
