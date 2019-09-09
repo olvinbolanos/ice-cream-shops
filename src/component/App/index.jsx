@@ -14,6 +14,47 @@ import {withFirebase} from '../Firebase'
 
 import * as ROUTES from '../../constants/routes'
 
+// const inputProps = {
+//   itemSrc : [
+//       {
+//           id: 0,
+//           name: 'images for icecream',
+//           src: 'https://lovingitvegan.com/wp-content/uploads/2016/11/Matcha-Green-Tea-Ice-Cream-8.jpg'
+//       },
+//       {
+//           id: 1,
+//           name: 'images for icecream',
+//           src: 'https://minimalistbaker.com/wp-content/uploads/2016/05/THE-BEST-Vegan-Chocolate-Ice-Cream-SO-creamy-rich-and-easy-to-make-vegan-glutenfree-icecream-dessert-chocolate-recipe-summer.jpg'
+//       },
+//       {
+//           id: 2,
+//           name: 'images for icecream',
+//           src: 'https://minimalistbaker.com/wp-content/uploads/2015/08/AMAZING-5-Ingredient-Vanilla-Coconut-Ice-Cream-Incredibly-simple-perfectly-sweet-INSANELY-creamy-vegan-glutenfree-icecream-dessert-recipe-vanilla-coconuticecream-coconut.jpg'
+//       },
+//   ]
+// }
+
+const inputProps = {
+  itemsSrc: [
+      { id: 0,
+        name: 'Los Angeles',
+        level: 'basic',
+        src: 'https://lovingitvegan.com/wp-content/uploads/2016/11/Matcha-Green-Tea-Ice-Cream-8.jpg'
+     },
+      {
+        id: 1,
+        name: 'Chicago',
+        level: 'basic',
+        src: 'https://minimalistbaker.com/wp-content/uploads/2015/08/AMAZING-5-Ingredient-Vanilla-Coconut-Ice-Cream-Incredibly-simple-perfectly-sweet-INSANELY-creamy-vegan-glutenfree-icecream-dessert-recipe-vanilla-coconuticecream-coconut.jpg'
+      },
+      {
+        id: 2,
+        name: 'New York',
+        level: 'advanced',
+        src: 'https://minimalistbaker.com/wp-content/uploads/2016/05/THE-BEST-Vegan-Chocolate-Ice-Cream-SO-creamy-rich-and-easy-to-make-vegan-glutenfree-icecream-dessert-chocolate-recipe-summer.jpg'
+      },           
+    ],
+};
 
 class App extends  Component  {
   state = {
@@ -36,7 +77,7 @@ class App extends  Component  {
     <Navigation authUser={this.state.authUser}/>
     <hr />
     <Switch>
-      <Route exact path={ROUTES.LANDING} component={LandingPage} />
+      <Route exact path={ROUTES.LANDING} render={() => <LandingPage  {...inputProps}/>}  />
       <Route exact path={ROUTES.SIGN_UP} render={() => <SignUpPage />} />
       <Route exact path={ROUTES.SIGN_IN} component={SignInPage} />
       <Route exact path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage} /> 

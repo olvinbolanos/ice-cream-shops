@@ -47,7 +47,7 @@ class PasswordChangeFormBase extends Component {
     }
 
     reauthenticate = async () => {
-        const user = await this.props.firebase.auth.
+        const user = await this.props.firebase.auth
         // const cred = this.props.firebase.doSignInWithEmailAndPassword.credential(user.email, currentPass)
         console.log(user)
     }
