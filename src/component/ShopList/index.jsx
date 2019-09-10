@@ -19,7 +19,7 @@ class ShopList extends Component {
     }
 
     componentDidMount() {
-        this.getShopFromApi('Los Angeles, California')
+        this.getShopFromApi('Pomona, California')
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -77,10 +77,9 @@ class ShopList extends Component {
             return (
               <div className="shopsInfo" key={i}>
                   <h2 className="heading">{result.name}</h2>
-                  <img className="ui medium bordered image" src={result.image_url} alt="" />
+                  <img className="ui medium bordered image" src={result.image_url} alt="images of icecream" />
                   <p>Rating for this Ice cream shop: <i>{result.rating}</i></p>
                   <p>Would you like to see some reviews from three customers? 
-                      <button>{result.id}</button>
                       <Link to={`${ROUTES.REVIEWS}/${result.id}`}>Reviews</Link>
                   </p>
                   <p>{result.location.display_address[0]}, {result.location.display_address[1]}</p>
