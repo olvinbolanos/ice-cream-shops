@@ -36,10 +36,6 @@ class Firebase {
 
   doPasswordReset = email => this.auth.sendPasswordResetEmail(email)
 
-  doPasswordUpdate = newPassword => this.auth.updatePassword(newPassword)
-
-  doEmailUpdate = newEmail => this.auth.updateEmail(newEmail)
-
   doSendEmailVerification = () => this.auth.sendEmailVerification()
 
   doSignOut = () => this.auth.signOut()
