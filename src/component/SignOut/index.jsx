@@ -1,17 +1,24 @@
-import React from 'react'
-import {withFirebase} from '../Firebase'
+import React, { Component } from 'react'
+import { withRouter } from 'react-router-dom'
+import { withFirebase } from '../Firebase'
 import 'semantic-ui-css/semantic.min.css';
 
 
-const SignOut = ({firebase}) => {
-    console.log(firebase)
+class SignOut extends Component {
+  
+  logOut = () => {
+    this.props.firebase.doSignOut()
+    this.props.history.push('/')
+  }
+  render() {
+    console.log(this.props, 'props of signout')
     return (
-        <div className="item">
-            <div className="ui button"  onClick={firebase.doSignOut}>
-                Sign out
-            </div>
-        </div>
+      <button type='button' className="ui button" onClick={this.logOut}>
+        Sign Out
+      </button>
     )
+  }
 }
 
-export default withFirebase(SignOut)    
+
+export default withFirebase(withRouter(SignOut))

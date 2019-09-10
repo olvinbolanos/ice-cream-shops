@@ -1,19 +1,16 @@
  import React, {Component} from 'react'
+ import '../../App.css'
 
  class Carousel extends Component {
-    constructor( props ){
-      super( props );
-    }
   
-    carouselRender = (  source, activeItem, handleEvent ) => {
-      //console.info('Carousel->carouselRender [0]', { source, state: this.state });
+    carouselRender = ( source, activeItem, handleEvent ) => {
   
        const indicators = source.map(( item, i ) => {
         let itemClass = '';
         if( item.id === activeItem ){
           itemClass += ' active';
         }
-        //console.info('Carousel->carouselRender [3]', { id: item.id, item, pageItemClass, activeItem: activeItem });
+        //console.log('Carousel->carouselRender [3]', { id: item.id, item, pageItemClass, activeItem: activeItem });
         return <li key={i} data-target="#demo" data-slide-to="1" className={ itemClass }
                  onClick={ e => handleEvent( e, 'clickItem', item )}>></li>;
       });   
@@ -23,13 +20,12 @@
         if( item.id === activeItem ){
           itemClass += ' active';
         }
-        //console.info('Carousel->carouselRender [5]', { id: item.id, item, pageItemClass, activeItem: activeItem });
+        //console.log('Carousel->carouselRender [5]', { id: item.id, item, pageItemClass, activeItem: activeItem });
         return <div key={i} className={ itemClass }>
           <img src={item.src} className="img-fluid" alt="New York" />
         </div>;
       });
     
-      //console.info('Carousel->carouselRender [7]', { });
       return <div id="demo" className="carousel slide" data-ride="carousel">
                 <ul className="carousel-indicators">
                   { indicators }
@@ -50,9 +46,7 @@
               </div>;
     };
     render() {
-        const { itemsSrc, activeItem, handleEvent } = this.props;
-        //console.info('MenuContent->render()', { source });
-    
+        const { itemsSrc, activeItem, handleEvent } = this.props;    
         return <div>{this.carouselRender( itemsSrc, activeItem, handleEvent ) }</div>;    
       }
     }

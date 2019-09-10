@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
-
-
+import '../../App.css'
 
 class Pagination extends Component {
     constructor( props ){
@@ -14,7 +13,6 @@ class Pagination extends Component {
         if( item.id === activeItem ){
           itemClass += ' active';
         }
-        //console.info('MenuContent->paginationRender', { id: item.id, item, pageItemClass, activeItem: activeItem });
         return <li key={i} className={ itemClass }>
           <a className="page-link" href="#"
           onClick={ e => handleEvent( e, 'clickItem', item )}>
@@ -37,7 +35,6 @@ class Pagination extends Component {
   
     render() {
       const { itemsSrc, activeItem, handleEvent } = this.props;
-      //console.info('MenuContent->render()', { source });
   
       return <div>{this.paginationRender( itemsSrc, activeItem, handleEvent ) }</div>;
     }

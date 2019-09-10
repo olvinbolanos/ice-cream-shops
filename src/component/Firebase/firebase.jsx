@@ -24,6 +24,7 @@ class Firebase {
     this.auth = app.auth()
     this.db = app.firestore()
     this.storage = app.storage()
+    this.reauthenticate = app.auth.EmailAuthProvider
   }
 
 
@@ -35,7 +36,11 @@ class Firebase {
 
   doPasswordReset = email => this.auth.sendPasswordResetEmail(email)
 
-  doPasswordUpdate = password => this.auth.doPasswordUpdate(password)
+  doPasswordUpdate = newPassword => this.auth.updatePassword(newPassword)
+
+  doEmailUpdate = newEmail => this.auth.updateEmail(newEmail)
+
+  doSendEmailVerification = () => this.auth.sendEmailVerification()
 
   doSignOut = () => this.auth.signOut()
 

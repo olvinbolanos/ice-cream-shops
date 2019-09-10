@@ -14,26 +14,6 @@ import {withFirebase} from '../Firebase'
 
 import * as ROUTES from '../../constants/routes'
 
-// const inputProps = {
-//   itemSrc : [
-//       {
-//           id: 0,
-//           name: 'images for icecream',
-//           src: 'https://lovingitvegan.com/wp-content/uploads/2016/11/Matcha-Green-Tea-Ice-Cream-8.jpg'
-//       },
-//       {
-//           id: 1,
-//           name: 'images for icecream',
-//           src: 'https://minimalistbaker.com/wp-content/uploads/2016/05/THE-BEST-Vegan-Chocolate-Ice-Cream-SO-creamy-rich-and-easy-to-make-vegan-glutenfree-icecream-dessert-chocolate-recipe-summer.jpg'
-//       },
-//       {
-//           id: 2,
-//           name: 'images for icecream',
-//           src: 'https://minimalistbaker.com/wp-content/uploads/2015/08/AMAZING-5-Ingredient-Vanilla-Coconut-Ice-Cream-Incredibly-simple-perfectly-sweet-INSANELY-creamy-vegan-glutenfree-icecream-dessert-recipe-vanilla-coconuticecream-coconut.jpg'
-//       },
-//   ]
-// }
-
 const inputProps = {
   itemsSrc: [
       { id: 0,
@@ -69,6 +49,12 @@ class App extends  Component  {
           : this.setState({authUser: null})
     })
   }
+
+  updateAuthUser = user => {
+    this.setState({
+      authUser: user
+    })
+  }
   
   render() {
     const {authUser} = this.state
@@ -83,10 +69,12 @@ class App extends  Component  {
       <Route exact path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage} /> 
       {
         authUser ?
+        <Switch>
         <Route exact path={ROUTES.HOME} render={() => <HomePage authUser={this.state.authUser} /> }/>
+        <Route exact path={ROUTES.ACCOUNT} render={() => <AccountPage authUser={this.state.authUser} updateAuthUser={this.updateAuthUser}/>} />
+        </Switch>
         : null
       }
-      <Route exact path={ROUTES.ACCOUNT}  component={AccountPage} authUser={this.state.authUser} />
       <Route exact path={ROUTES.ADMIN} component={AdminPage} />
       <Route exact path={`${ROUTES.REVIEWS}/:id`} component={Reviews} />
       <Route exact path={`${ROUTES.MAP}/:id`} component={StoresMap} />

@@ -8,34 +8,31 @@ import '../../App.css'
 
 import * as ROUTES from '../../constants/routes'
 
-const Account= () => (
-    <div>
-        <AccountForm />
-    </div>
-)
-
-
-class AccountFormBase extends Component{
+class Account extends Component{
     constructor(props) {
         super(props)
         this.state = {
-            
-
+            // user: {
+            //     user: '',
+            //     email: ''
+            // }
+            authUser: null
         }
     }
 
+   
+
     render() {
-        console.log(this.props.authUser)
+        console.log(this.props.authUser, '<-- this is the user in account')
         return (
         <div>
             <h1>Account</h1>
-            <PasswordChange authUser={this.props.authUser} />
+            <PasswordChange authUser={this.props.authUser} updateAuthUser={this.props.updateAuthUser}/>
         </div>
 
         )
     }
 }
 
-const AccountForm = withRouter(withFirebase(AccountFormBase))
 
-export default Account
+export default withFirebase(withRouter(Account))

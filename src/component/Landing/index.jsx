@@ -13,46 +13,7 @@ const timer = () => {
 
     return `${months[month]} ${day}, ${year}`
 }
-
-// let slideIndex = 1;
-// // Next/previous controls
-// const plusSlides = n => {
-//     showSlides(slideIndex += n)
-// }
-
-// // Thumbnail image control
-// const currentSlide = n => {
-//     showSlides(slideIndex = n)
-// }
-
-// const showSlides = n => {
-//     let i;
-//     let slides = document.getElementsByClassName('slides')
-//     let dots = document.getElementsByClassName('dot')
-
-//     {
-//         if (n > slides) {
-//             slideIndex = 1
-//         } else if (n < 1) {
-//             slideIndex = slides.length
-
-//         }
-//     }
-//     let sliders = []
-//     for (i = 0; i < slides.length; i++) {
-//         slides[i].style.display = 'none' 
-//         sliders.push()
-//     }
-
-//     for (i = 0; i < dots.length; i++) {
-//         dots[i].className = dots[i].className.replace(' active', '');
-//     }
-
-//     slides[slideIndex - 1].style.display = 'block'
-//     dots[slideIndex-1].className += ' active'
-// }
   
-
     class Landing extends Component {
         constructor(props) {
             super(props)
@@ -97,19 +58,26 @@ const timer = () => {
             const { activeItem } = this.state
             props = {...props, handleEvent: this.handleEvent, activeItem}
             return (
-            <div>
-                <div className="container-fluid">
-                    <div className="row">
-                        <div className="col-1">
-                        </div>
-                        <div className="col-10">
-                            <Pagination {...props} />
-                            <Carousel {...props} />
-                        </div>
-                        <div className="col-1">
+            <div className="landingBody">
+                <div>
+                    <div className="container-fluid">
+                        <div className="row">
+                            <div className="col-1">
+                            </div>
+                            <div className="col-10">
+                                <Pagination {...props} />
+                                <Carousel {...props} />
+                            </div>
+                            <div className="col-1">
+                            </div>
                         </div>
                     </div>
                 </div>
+              <div>
+                  <div className="landing">
+                      <p>{timer()} Welcome to your icecream finder.</p>
+                  </div>
+            </div>
             </div>
             )
         }
