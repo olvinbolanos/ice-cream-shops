@@ -7,7 +7,7 @@ import '../../App.css'
 const timer = () => {
     const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
     const date = new Date()
-    const day = date.getDay()
+    const day = date.getDate()
     const month = date.getMonth()
     const year = date.getFullYear()
 
@@ -75,7 +75,8 @@ const timer = () => {
                 </div>
               <div>
                   <div className="landing">
-                      <p>{timer()} Welcome to your icecream finder.</p>
+                      <p className="landingTimer">{timer()}</p>
+                      <h2 className="landingHeading">Welcome to your icecream finder</h2>
                   </div>
             </div>
             </div>

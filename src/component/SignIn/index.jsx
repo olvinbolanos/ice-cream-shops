@@ -6,7 +6,7 @@ import * as ROUTES from '../../constants/routes'
 
 const SignIn = () => (
   <div>
-    <h1>SignIn</h1>
+    <h1 className="landingHeading">SignIn</h1>
     <SignInForm />
     <SignUpLink />
     <ForgotPasswordLink />
@@ -39,24 +39,39 @@ class SignInFormBase extends Component {
   render() {
     const { email, password, error } = this.state
     return (
-      <form onSubmit={this.onSubmit}>
-        <input 
-          name='email'
-          type='text'
-          value={email}
-          onChange={this.onChange}
-          placeholder='Email Address'
-        />
-        <input 
-          name='password'
-          type='password'
-          value={password}
-          onChange={this.onChange}
-          placeholder='Password'
-        />
-        <button type='submit'>sign in</button>
+      
+      <form className="ui large form" onSubmit={this.onSubmit}>
+      <div className="ui stacked segment">
+        <div className="field">
+          <div className="ui left icon input">
+            <i className="user icon"></i>
+            <input 
+              name='email'
+              type='text'
+              value={email}
+              onChange={this.onChange}
+              placeholder='Email Address'
+            />
+          </div>
+        </div>
+        <div className="field">
+          <div className="ui left icon input">
+            <i className="lock icon"></i>
+            <input 
+              name='password'
+              type='password'
+              value={password}
+              onChange={this.onChange}
+              placeholder='Password'
+            />          
+        </div>
+        </div>
+        <button type='submit' className="ui fluid large blue submit button">Sign In</button>
         {error && error.message}
-      </form>
+      </div>
+        
+
+    </form>
     )
   }
 }
@@ -64,15 +79,19 @@ class SignInFormBase extends Component {
 const SignInForm = withRouter(withFirebase(SignInFormBase))
 
 const SignUpLink = () => (
+  <div className="ui message">
     <p>
       Don't have an account? <NavLink exact to={ROUTES.SIGN_UP}>Sign Up</NavLink>
     </p>
+  </div>
 )
 
 const ForgotPasswordLink = () => (
-  <p>
-    Don't remember your password. That's fine, 
-      <NavLink exact to={ROUTES.PASSWORD_FORGET}>Click here</NavLink>
-  </p>
+  <div className="ui message">
+    <p>
+      Don't remember your password. That's fine, 
+        <NavLink exact to={ROUTES.PASSWORD_FORGET}> Click here</NavLink>
+    </p>
+  </div>
 )
 export default SignIn

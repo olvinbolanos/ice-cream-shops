@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Frank+Ruhl+Libre&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
+
+
+#userName {
+  font-family: 'Frank Ruhl Libre', serif;
+  font-size: 18px;
+}
+
 .App {
   text-align: center;
 }
@@ -38,6 +45,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+label {
+  font-family: 'Frank Ruhl Libre', serif;
+  display: inline-block;
+  margin-bottom: .5rem;
+  font-size: 1.32123rem;
 }
 
 #root > div > div:nth-child(1) > div > div:nth-child(1) > div > a {
@@ -84,6 +98,88 @@
   box-sizing: none !important;
 }
 
+.ui.medium.image {
+  padding: 2px 3px;
+  margin: 5em auto;
+}
+
+.ui.form .field {
+  margin: 9px 20px 1em;
+}
+
+.ui.form input {
+  width: 250px !important;
+}
+
+.address:hover .card{
+  background-color: none !important;
+  background: none;
+}
+
+.ui.message {
+  font-size: 1em;
+  text-align: center;
+  width: 60%;
+  margin: 10px auto;
+  background-color: white;
+  font-size: 1rem;
+}
+
+.ui.blue.button {
+  background-color: #00b5ad;
+  color: #fff;
+  text-shadow: none;
+  background-image: none;
+}
+
+#root > div > div:nth-child(3) > div > form > button {
+  position: relative;
+  left: 20px;
+}
+
+.ui.stacked.segment {
+  padding-bottom: 1.4em;
+  width: 50%;
+  margin: 0 auto;
+  box-shadow: 4px 6px 7px black;
+}
+
+.accountBtn {
+ position: relative;
+ left: 1em;
+}
+
+ .accountHeading  {
+  min-height: 1rem;
+  font-size: 2rem;
+  left: 1rem;
+  position: relative;
+}
+
+
+.topnav {
+	position: fixed;
+	background:#2a2a2a;
+	border:none;
+	top:0;
+	left: 0;
+	width: 100%;
+	box-shadow: 0 0 40px #222;
+	-webkit-box-shadow: 0 0 40px #222;
+	-moz-box-shadow: 0 0 40px #222;
+}
+
+
+.accountImg {
+  background-image: url("https://ichef.bbci.co.uk/images/ic/960xn/p04h5n1h.png");
+  background-repeat: no-repeat;
+  background-position-x: 357px;
+  position:relative;
+	width:100%;
+	height:auto;
+  margin:0;
+}
+
 #root > div > div:nth-child(3) > div > form > div > input{
   width: 40%;
 }
@@ -103,10 +199,30 @@
   font-weight: 700;
 }
 
+.landingTimer {
+  font-family: 'Rubik', sans-serif;
+  text-align: left;
+  position: relative;
+  left: 1em;
+  font-size: 2.32323rem;
+}
+
+.landingHeading {
+  font-family: 'Rubik', sans-serif;
+  text-align: left;
+  position: relative;
+  left: 1em;
+  font-size: 2.32323rem;
+  width: 40%;
+  box-shadow: 8px 7px 10px #FFF;
+}
+
 .landingBody {
   background: black;
-  height: calc(150vh - 100px)
+  max-height: calc(160vh - 100px)
 } 
+
+
 
 /* Container for slides */
 * {box-sizing: border-box}
@@ -116,6 +232,22 @@
   position: relative;
   margin: auto;
 }
+
+.shopsInfo {
+  margin: 24px auto;
+  text-align: center;
+  box-shadow: 2px 2px 6px black;
+  width: 64%;
+}
+
+.shopsInfo .heading {
+  font-size: 2.714286rem;
+}
+
+.shopsInfo p {
+  font-size: 1.24rem;
+}
+
 
 /* hiding the images */
 /* Next and prev buttons */
@@ -190,4 +322,118 @@
   height: 600px;
 }
 
+
+
+.wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -86px;
+  margin-left: -89px;
+  text-align: center;
+}
+
+.pagination-sm .page-link {
+  padding: .35rem 1.5rem;
+  font-size: .875rem;
+  line-height: 2.5;
+}
+
+.page-link {
+  -webkit-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+  -moz-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+  -ms-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+  -o-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+  transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+  display: block;
+  margin: 20px auto;
+  max-width: 180px;
+  text-decoration: none;
+  border-radius: 4px;
+  padding: 20px 30px;
+}
+
+.page-link {
+  color: rgba(30, 22, 54, 0.6);
+  box-shadow: rgba(30, 22, 54, 0.4) 0 0px 0px 2px inset;
+}
+
+.page-link:hover {
+  color: rgba(255, 255, 255, 0.85);
+  box-shadow: rgba(30, 22, 54, 0.7) 0 0px 0px 40px inset;
+}
+
+#root > div > div:nth-child(3) > div > img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  
+}
+
+/* =======================================
+2. Section: Intro for the banner dude
+======================================== */
+
+.default {
+	background:#010101;
+	border-bottom:1px solid #222;
+}
+
+.fixed {
+	position: fixed;
+	background:#2a2a2a;
+	border:none;
+	top:0;
+	left: 0;
+	width: 100%;
+	box-shadow: 0 0 40px #222;
+	-webkit-box-shadow: 0 0 40px #222;
+	-moz-box-shadow: 0 0 40px #222;
+}
+
+section#intro {
+	background: #000  url(https://cdn.pixabay.com/photo/2017/09/24/11/59/password-2781614_960_720.jpg) 50% 0 no-repeat; 
+	position:relative;
+	width:100%;
+	height:auto;
+	margin:0;
+	padding:300px 0 120px;
+}
+
+@media (min-width: 1024px) {
+	section#intro {
+		background-attachment: fixed;
+	}
+}
+
+section#intro.inner {
+	padding:140px 0 30px;
+}
+
+section#intro.inner h2 strong  {
+	color:#fff;
+}
+section#intro.inner h2  {
+	font-size:32px;
+}
+
+
+section#intro  {
+	text-align:center;
+}
+
+section#intro i  {
+	margin-left:0;
+	text-align:center;
+}
+
+section#intro h1  {
+	color:#fff;
+	font-size:64px;
+  font-weight:700;
+}
+section#intro h2  {
+	color:#ddd;
+	font-size:24px;
+}
 

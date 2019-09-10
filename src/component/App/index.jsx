@@ -7,7 +7,6 @@ import SignInPage from '../SignIn'
 import PasswordForgetPage from '../PasswordForget'
 import HomePage from '../Home'
 import AccountPage from '../Account'
-import AdminPage from '../Admin'
 import Reviews from '../Reviews'
 import StoresMap from '../StoresMap'
 import {withFirebase} from '../Firebase'
@@ -75,7 +74,6 @@ class App extends  Component  {
         </Switch>
         : null
       }
-      <Route exact path={ROUTES.ADMIN} component={AdminPage} />
       <Route exact path={`${ROUTES.REVIEWS}/:id`} component={Reviews} />
       <Route exact path={`${ROUTES.MAP}/:id`} component={StoresMap} />
     </Switch>

@@ -2,9 +2,8 @@ import React, {Component} from 'react'
 import {withRouter} from 'react-router-dom'
 import {withFirebase} from '../Firebase'
 import axios from 'axios';
-// Build array of months
-const months = ['January', 'February'];
-const timeChange = (time) => {};
+
+
 
 class Reviews extends Component {
     constructor(props) {
@@ -26,6 +25,7 @@ class Reviews extends Component {
 
     componentDidMount() {
         this.getReviewsFromApi()
+        console.log('component mounted!1')
     }
 
     getReviewsFromApi = () => {
@@ -87,3 +87,4 @@ class Reviews extends Component {
 }
 
 export default withFirebase(withRouter(Reviews))
+                

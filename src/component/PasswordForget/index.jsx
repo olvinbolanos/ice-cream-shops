@@ -41,9 +41,13 @@ class PasswordForgetFormBase extends Component {
     render() {
         const { email, error } = this.state
         return (
-          <div>
-            <h1>Did you forget your password?</h1>
-           
+          <div className="passwordBody">
+              <section id="intro">
+                <div className="slogan">
+                <div className="icon">
+                    <i className="icon-beaker icon-10x"></i>
+                </div>
+                <h1>Did you forget your password?</h1>
             <Form className="ui form" onSubmit={this.onSubmit}>
                 <div className="field">
                     <h2>Enter Your Email Address: </h2>
@@ -55,9 +59,12 @@ class PasswordForgetFormBase extends Component {
                     placeholder='Email Address'
                     />  
                 </div>
-                <Button type="submit">Send Email</Button>
+                <Button type="submit" >Send Email</Button>
                 {error && error.message}
             </Form>
+                </div>
+            </section>
+            
           </div>
         )
     }
