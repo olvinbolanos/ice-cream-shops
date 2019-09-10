@@ -11,7 +11,6 @@ class SignOut extends Component {
     this.props.history.push('/')
   }
   render() {
-    console.log(this.props, 'props of signout')
     return (
       <button type='button' className="ui button" onClick={this.logOut}>
         Sign Out
