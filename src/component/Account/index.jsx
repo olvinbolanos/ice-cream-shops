@@ -8,28 +8,27 @@ import '../../App.css'
 
 import * as ROUTES from '../../constants/routes'
 
-class Account extends Component{
-    constructor(props) {
-        super(props)
-        this.state = {
-            // user: {
-            //     user: '',
-            //     email: ''
-            // }
-            authUser: null
-        }
-    }
-
-   
+class Account extends Component {
 
     render() {
         console.log(this.props.authUser, '<-- this is the user in account')
         return (
-        <div>
-            <h1>Account</h1>
-            <PasswordChange authUser={this.props.authUser} updateAuthUser={this.props.updateAuthUser}/>
+        <div className='accountImg'>
+            <header>
+            <div id="topnav" className="navbar navbar-fixed-top">
+                <div className="navbar-inner">
+                    <div className="container">
+                    <h1 className="accountHeading">Account</h1>
+                    <PasswordChange authUser={this.props.authUser} updateAuthUser={this.props.updateAuthUser}/>
+                    <div className="logo">
+                    </div>
+                    <div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            </header> 
         </div>
-
         )
     }
 }

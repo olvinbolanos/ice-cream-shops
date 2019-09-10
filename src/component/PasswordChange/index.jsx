@@ -2,10 +2,9 @@ import React, {Component} from 'react'
 import {withRouter} from 'react-router-dom'
 import { withFirebase } from '../Firebase'
 import 'semantic-ui-css/semantic.min.css';
-import { Form, Button, TextInput, ScrollView } from 'semantic-ui-react'
+import { Form, Button } from 'semantic-ui-react'
 import '../../App.css'
 
-import * as ROUTES from '../../constants/routes'
 
 const PasswordChange = ({ updateAuthUser }) => (
     <div>
@@ -29,7 +28,7 @@ class PasswordChangeFormBase extends Component {
     }
 
     reauthenticate = (currentPassword) => {
-        const { newEmail, newPassword, newName } = this.state
+        const { newEmail, newName } = this.state
         let user = this.props.firebase.auth.currentUser
         const credential = this.props.firebase.reauthenticate.credential(
             user.email, 
@@ -37,7 +36,6 @@ class PasswordChangeFormBase extends Component {
         )
         user.reauthenticateWithCredential(credential)
             .then(updateUser => {
-                
                 let emailRef = this.props.firebase.db.collection('users').doc(updateUser.user.uid)
                
                 return emailRef.update({
@@ -96,7 +94,7 @@ class PasswordChangeFormBase extends Component {
         const {newName, currentPass, newPassword, newEmail, error} = this.state
         return (
           <div>
-            <h1>Do you want to change your user account?</h1>
+            <h1 className="accountHeading">Do you want to change your user account?</h1>
            
             <Form className="ui form" onSubmit={this.onSubmit}>
             <div className="field">
@@ -117,7 +115,7 @@ class PasswordChangeFormBase extends Component {
                     <input type="email" className="newEmail" autoComplete="off" name="newEmail" value={newEmail} onChange={this.onChange} placeholder="Change Email Address" />
                 </div> 
        
-                <Button type="submit" >Confirm Request</Button>
+                <Button type="submit" className="accountBtn">Confirm Request</Button>
                 {error && error.message} 
             </Form>
           </div>

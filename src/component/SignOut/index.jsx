@@ -13,7 +13,7 @@ class SignOut extends Component {
   render() {
     return (
       <button type='button' className="ui button" onClick={this.logOut}>
-        Sign Out
+        <i className="user circle icon"></i>Sign Out
       </button>
     )
   }
