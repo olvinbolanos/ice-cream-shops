@@ -74,6 +74,7 @@ class ShopList extends Component {
 
     renderShopsInfo() {
         const ShopList = this.state.results.map((result, i) => {
+            
             return (
               <div className="shopsInfo" key={i}>
                   <h2 className="heading">{result.name}</h2>
