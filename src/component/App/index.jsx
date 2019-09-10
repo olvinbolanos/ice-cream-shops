@@ -71,11 +71,11 @@ class App extends  Component  {
         <Switch>
         <Route exact path={ROUTES.HOME} render={() => <HomePage authUser={this.state.authUser} /> }/>
         <Route exact path={ROUTES.ACCOUNT} render={() => <AccountPage authUser={this.state.authUser} updateAuthUser={this.updateAuthUser}/>} />
+        <Route exact path={`${ROUTES.REVIEWS}/:id`} component={Reviews} />
+        <Route exact path={`${ROUTES.MAP}/:id`} component={StoresMap} />
         </Switch>
         : null
       }
-      <Route exact path={`${ROUTES.REVIEWS}/:id`} component={Reviews} />
-      <Route exact path={`${ROUTES.MAP}/:id`} component={StoresMap} />
     </Switch>
   </div>
   )

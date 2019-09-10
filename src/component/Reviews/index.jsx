@@ -15,7 +15,7 @@ class Reviews extends Component {
         }
     }
 
-    componentDidUpdate(prevProps, prevState) {
+     componentDidUpdate(prevProps, prevState) {
         if(this.props.reviewScript !== prevProps.reviewScript) {
             this.setState({
                 reviews: [],
@@ -30,6 +30,7 @@ class Reviews extends Component {
 
     getReviewsFromApi = () => {
         const reviewId = this.props.match.params.id
+        console.log(reviewId)
 
         axios.get(`${'https://cors-anywhere.herokuapp.com/'}https://api.yelp.com/v3/businesses/${reviewId}/reviews`, {
             // required authorization format from API
@@ -55,7 +56,6 @@ class Reviews extends Component {
     }
 
     renderReviews() {
-        console.log(this.state.reviews)
         const ReviewsList = this.state.reviews.map((review, i) => {
             return (
                 // rating, text, time_created, url, {user}
@@ -66,12 +66,11 @@ class Reviews extends Component {
                     <p className="reviewText">{review.text}</p>
                     <h2 className="timeCapsule">Posted this review on: {review.time_created} </h2>
                 </div>
-                
             )
         })
 
         return (
-            <div className="ShopList">{ReviewsList}</div>
+            <div className="ShopList"><p>{ReviewsList}</p></div>
         )
     }
 
