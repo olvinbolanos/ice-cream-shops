@@ -70,7 +70,7 @@ label {
   font-family: 'Frank Ruhl Libre', serif;
 }
 
-.mapContainer {
+/* .mapContainer {
   width: 100%;
   height: 400px;
   padding-top: 2em;
@@ -78,7 +78,7 @@ label {
   overflow: hidden;
   background:url("https://www.wichitabyeb.com/wp-content/uploads/2019/02/img_3864.jpg");
   background-repeat: none;
-}
+} */
 
 .storeContainer {
   height: 400px;
@@ -88,19 +88,21 @@ label {
 }
 
 .ui.segments {
-  width: 50%;
-  margin: 1.5em auto;
+  width: 40%;
+  margin: 0em auto;
   border: 1px solid rgba(34,36,38,.15);
   box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
   border-radius: .28571429rem;
   position: relative;
   display: block;
-  box-sizing: none !important;
+  left: 340px;
+  position: relative;
 }
 
 .ui.medium.image {
   padding: 2px 3px;
-  margin: 5em auto;
+  margin: 3em auto;
+  width: 350px;
 }
 
 .ui.form .field {
@@ -139,7 +141,7 @@ label {
 
 .ui.stacked.segment {
   padding-bottom: 1.4em;
-  width: 50%;
+  width: 60%;
   margin: 0 auto;
   box-shadow: 4px 6px 7px black;
 }
@@ -212,7 +214,7 @@ label {
   text-align: left;
   position: relative;
   left: 1em;
-  font-size: 2.32323rem;
+  font-size: 3.32323rem;
   width: 40%;
   box-shadow: 8px 7px 10px #FFF;
 }
@@ -295,6 +297,13 @@ label {
   padding: 8px 12px;
   position: absolute;
   top: 0;
+}
+
+.flexPics {
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;  
+  margin: -40px 0px;
 }
 
 /* the dot/bullets/indicators */
@@ -399,6 +408,17 @@ section#intro {
 	margin:0;
 	padding:300px 0 120px;
 }
+
+section#mapIntro {
+  background: #000  url(https://www.wichitabyeb.com/wp-content/uploads/2019/02/img_3864.jpg) 50% 0 no-repeat; 
+	position:relative;
+	width:100%;
+	height:auto;
+	margin:0;
+	padding:0 0 120px;
+}
+
+
 
 @media (min-width: 1024px) {
 	section#intro {

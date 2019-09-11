@@ -16,8 +16,6 @@ const config = {
   googleKey: process.env.REACT_APP_GOOGLE_KEY
 };
 
-
-
 class Firebase {
   constructor() {
     app.initializeApp(config)
@@ -39,6 +37,8 @@ class Firebase {
   doSendEmailVerification = () => this.auth.sendEmailVerification()
 
   doSignOut = () => this.auth.signOut()
+
+  doDeleteAccount = () => this.auth.delete()
 
   // user 
   user = uid => this.db.collection(`users`).doc(uid)

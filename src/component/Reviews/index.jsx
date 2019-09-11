@@ -60,17 +60,19 @@ class Reviews extends Component {
             return (
                 // rating, text, time_created, url, {user}
                 // image_url, name, profile_url
+                <div className="shopsInfo">
                 <div className="reviewsInfo heading" key={i}>
                     <img className="ui medium bordered image" src={review.user.image_url} alt={review.user.name} />
                     <h1 className="username">{review.user.name}</h1>
                     <p className="reviewText">{review.text}</p>
                     <h2 className="timeCapsule">Posted this review on: {review.time_created} </h2>
                 </div>
+                </div>
             )
         })
 
         return (
-            <div className="ShopList"><p>{ReviewsList}</p></div>
+            <div className="ShopList"><p>{ReviewsList}</p></div>   
         )
     }
 

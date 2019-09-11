@@ -64,7 +64,6 @@ class PasswordForgetFormBase extends Component {
             </Form>
                 </div>
             </section>
-            
           </div>
         )
     }

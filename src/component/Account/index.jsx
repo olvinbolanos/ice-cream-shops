@@ -1,12 +1,9 @@
 import React, {Component} from 'react'
-import {withRouter, Link} from 'react-router-dom'
+import {withRouter} from 'react-router-dom'
 import { withFirebase } from '../Firebase'
 import PasswordChange from '../PasswordChange'
 import 'semantic-ui-css/semantic.min.css';
-import { Form, Button, TextInput, ScrollView } from 'semantic-ui-react'
 import '../../App.css'
-
-import * as ROUTES from '../../constants/routes'
 
 class Account extends Component {
 

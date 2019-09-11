@@ -38,6 +38,10 @@ class SignInFormBase extends Component {
 
   render() {
     const { email, password, error } = this.state
+    const isInvalid = 
+        password === '' ||
+        email === '';
+
     return (
       
       <form className="ui large form" onSubmit={this.onSubmit}>
@@ -66,7 +70,7 @@ class SignInFormBase extends Component {
             />          
         </div>
         </div>
-        <button type='submit' className="ui fluid large blue submit button">Sign In</button>
+        <button type='submit' className="ui fluid large blue submit button" disabled={isInvalid}>Sign In</button>
         {error && error.message}
       </div>
         

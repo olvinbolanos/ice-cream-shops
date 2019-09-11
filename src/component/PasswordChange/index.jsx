@@ -3,6 +3,7 @@ import {withRouter} from 'react-router-dom'
 import { withFirebase } from '../Firebase'
 import 'semantic-ui-css/semantic.min.css';
 import { Form, Button } from 'semantic-ui-react'
+import DeleteAccount from '../Delete'
 import '../../App.css'
 
 
@@ -82,8 +83,8 @@ class PasswordChangeFormBase extends Component {
             const {newEmail, currentPass, newPassword} = this.state
             
             this.changeEmail(newEmail)
-            this.reauthenticate(currentPass)
             this.changePassword(newPassword)
+            this.reauthenticate(currentPass)
         
         } catch(err) {
             console.log(err)
@@ -118,6 +119,8 @@ class PasswordChangeFormBase extends Component {
                 <Button type="submit" className="accountBtn">Confirm Request</Button>
                 {error && error.message} 
             </Form>
+            <p>Do you want to delete your account?</p>
+            <DeleteAccount />
           </div>
         )
     }

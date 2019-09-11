@@ -69,6 +69,7 @@ class App extends  Component  {
       {
         authUser ?
         <Switch>
+        <Route exact path={ROUTES.LANDING} render={() => <LandingPage  {...inputProps}/>}  />
         <Route exact path={ROUTES.HOME} render={() => <HomePage authUser={this.state.authUser} /> }/>
         <Route exact path={ROUTES.ACCOUNT} render={() => <AccountPage authUser={this.state.authUser} updateAuthUser={this.updateAuthUser}/>} />
         <Route exact path={`${ROUTES.REVIEWS}/:id`} component={Reviews} />
