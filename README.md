@@ -10,7 +10,7 @@ Firebase
 ## Project
 
 
-![MacDown Screenshot](https://imgur.com/UMwyjIZ)
+![MacDown Screenshot](https://i.imgur.com/UMwyjIZ.png)
 ## Introduction
 
 This website is made with all the CRUD functionality and  uses an api to render all the information from the Yelp developer site. It fetches the information from the front-end and stores the user's information on Firebase. This was basically a fun site to build and it presented me to Firebase storage and authentication. Which is really easy to use and good for deploying a project. 
