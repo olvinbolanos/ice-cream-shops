@@ -1,4 +1,4 @@
-_# maze_visionary
+_# IceCream Finder
 javascript
 React
 React.Context
