@@ -5,7 +5,8 @@ React.Context
 Bootstrap4
 CSS
 Firebase
-
+Semantic-UI
+Google-Maps-React
 
 ## Project
 
