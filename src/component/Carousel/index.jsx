@@ -6,12 +6,12 @@
     carouselRender = ( source, activeItem, handleEvent ) => {
   
        const indicators = source.map(( item, i ) => {
-        let itemClass = '';
-        if( item.id === activeItem ){
-          itemClass += ' active';
-        }
-        //console.log('Carousel->carouselRender [3]', { id: item.id, item, pageItemClass, activeItem: activeItem });
-        return <li key={i} data-target="#demo" data-slide-to="1" className={ itemClass }
+         let itemClass = '';
+         if( item.id === activeItem ){
+           itemClass += ' active';
+         }
+         
+         return <li key={i} data-target="#demo" data-slide-to="1" className={ itemClass }
                  onClick={ e => handleEvent( e, 'clickItem', item )}>></li>;
       });   
       
@@ -20,7 +20,6 @@
         if( item.id === activeItem ){
           itemClass += ' active';
         }
-        //console.log('Carousel->carouselRender [5]', { id: item.id, item, pageItemClass, activeItem: activeItem });
         return <div key={i} className={ itemClass }>
           <img src={item.src} className="img-fluid" alt="New York" />
         </div>;

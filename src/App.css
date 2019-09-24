@@ -80,6 +80,17 @@ label {
   background-repeat: none;
 } */
 
+.container-fluid {
+  width: 600px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
+
+
 .storeContainer {
   height: 400px;
   width: 60%;
@@ -214,9 +225,7 @@ label {
   text-align: left;
   position: relative;
   left: 1em;
-  font-size: 3.32323rem;
-  width: 40%;
-  box-shadow: 8px 7px 10px #FFF;
+  font-size: 3rem;
 }
 
 .landingBody {
@@ -328,7 +337,7 @@ label {
 /* image */
 #demo > div > div.carousel-item.active > img {
   width: 100%;
-  height: 600px;
+  height: 400px;
 }
 
 

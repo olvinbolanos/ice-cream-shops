@@ -18,19 +18,19 @@ const inputProps = {
       { id: 0,
         name: 'Los Angeles',
         level: 'basic',
-        src: 'https://lovingitvegan.com/wp-content/uploads/2016/11/Matcha-Green-Tea-Ice-Cream-8.jpg'
+        src: 'https://i.imgur.com/l1ZlRO8.jpg'
      },
       {
         id: 1,
         name: 'Chicago',
         level: 'basic',
-        src: 'https://minimalistbaker.com/wp-content/uploads/2015/08/AMAZING-5-Ingredient-Vanilla-Coconut-Ice-Cream-Incredibly-simple-perfectly-sweet-INSANELY-creamy-vegan-glutenfree-icecream-dessert-recipe-vanilla-coconuticecream-coconut.jpg'
+        src: 'https://i.imgur.com/LWsGO4f.jpg'
       },
       {
         id: 2,
         name: 'New York',
         level: 'advanced',
-        src: 'https://minimalistbaker.com/wp-content/uploads/2016/05/THE-BEST-Vegan-Chocolate-Ice-Cream-SO-creamy-rich-and-easy-to-make-vegan-glutenfree-icecream-dessert-chocolate-recipe-summer.jpg'
+        src: 'https://i.imgur.com/Ot8gGC3.jpg'
       },           
     ],
 };
