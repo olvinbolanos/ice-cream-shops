@@ -7,7 +7,7 @@ export const ADMIN = '/admin';
 export const PASSWORD_FORGET = '/pw-forget';
 export const REVIEWS = '/store';
 export const MAP = '/map';
-// Environmental variables constants that can't be changed
+
 
 
 

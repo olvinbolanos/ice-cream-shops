@@ -19,8 +19,6 @@ class Home extends Component {
       })
     }
 
-   
-
   render() {
     console.log(this.props.authUser)
     return (
@@ -36,5 +34,3 @@ class Home extends Component {
 }
 
 export default withFirebase(withRouter(Home))
-
-// this is called react.context

@@ -33,7 +33,6 @@ class Reviews extends Component {
         console.log(reviewId)
 
         axios.get(`${'https://cors-anywhere.herokuapp.com/'}https://api.yelp.com/v3/businesses/${reviewId}/reviews`, {
-            // required authorization format from API
             headers: {
                 Authorization: `Bearer ${process.env.REACT_APP_YELP_KEY}`,
             }
@@ -58,8 +57,6 @@ class Reviews extends Component {
     renderReviews() {
         const ReviewsList = this.state.reviews.map((review, i) => {
             return (
-                // rating, text, time_created, url, {user}
-                // image_url, name, profile_url
                 <div className="shopsInfo">
                 <div className="reviewsInfo heading" key={i}>
                     <img className="ui medium bordered image" src={review.user.image_url} alt={review.user.name} />
@@ -81,7 +78,6 @@ class Reviews extends Component {
             <section>
                 {this.state.reviews.length ? this.renderReviews() : this.renderEmptyState()}
 
-                {/* conditional rendering for error state = when this.state.errorState is not true */}
                 {!!this.state.errorState && <h1>{this.state.error}</h1>}
             </section>
         )

@@ -63,7 +63,7 @@ class App extends  Component  {
     <hr />
     <Switch>
       <Route exact path={ROUTES.LANDING} render={() => <LandingPage  {...inputProps}/>}  />
-      <Route exact path={ROUTES.SIGN_UP} render={() => <SignUpPage />} />
+      <Route exact path={ROUTES.SIGN_UP} component={SignUpPage} />
       <Route exact path={ROUTES.SIGN_IN} component={SignInPage} />
       <Route exact path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage} /> 
       {

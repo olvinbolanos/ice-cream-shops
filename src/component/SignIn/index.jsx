@@ -73,8 +73,6 @@ class SignInFormBase extends Component {
         <button type='submit' className="ui fluid large blue submit button" disabled={isInvalid}>Sign In</button>
         {error && error.message}
       </div>
-        
-
     </form>
     )
   }

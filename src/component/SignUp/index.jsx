@@ -19,8 +19,6 @@ class SignUpFormBase extends Component {
         error: null,
         image: null
     }
-
-    // catch is used instead of if, else statements
     onSubmit = e => {
         e.preventDefault()
         const { email, passwordOne, username, image } = this.state
@@ -43,13 +41,11 @@ class SignUpFormBase extends Component {
                 })
             }
             }
-            // this firestore creates a username or email if it doesn't exist yet in cloud
           ).then(()=> {
               this.props.history.push(ROUTES.HOME)
           })
           .catch(error => {
               this.setState({error})
-              setTimeout(() => this.setState({error: null}))
           })
 
     }
@@ -62,9 +58,7 @@ class SignUpFormBase extends Component {
         })
     }
 
-
     render() {
-        console.log(this.state)
         const {
             username,
             email,
@@ -142,8 +136,8 @@ class SignUpFormBase extends Component {
               </div>
             </div>
             
+             <p style={PStyle}>{error && error.message}</p>
             <button type='submit' className="ui fluid large teal submit button" disabled={isInvalid}>Register</button>
-            {error && error.message}
           </div>
         </form>
         
@@ -154,3 +148,8 @@ class SignUpFormBase extends Component {
 const SignUpForm = withRouter(withFirebase(SignUpFormBase))
 
 export default SignUp
+
+const PStyle = {
+  color: 'red',
+  textAlign: 'center'
+};

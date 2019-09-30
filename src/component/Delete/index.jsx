@@ -28,10 +28,8 @@ class Delete extends Component {
                             this.props.updateAuthUser(snapShot.data())
                             this.props.history.push('/')
                         })
-                    // this.props.updateAuthUser(snapShot.data())
                 })
                 .catch(function(error) {
-                    // The document probably doesn't exist.
                     console.error("Error updating document: ", error);
                 });
             })

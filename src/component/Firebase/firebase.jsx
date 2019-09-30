@@ -39,13 +39,9 @@ class Firebase {
   doSignOut = () => this.auth.signOut()
 
   doDeleteAccount = () => this.auth.delete()
-
-  // user 
+ 
   user = uid => this.db.collection(`users`).doc(uid)
   
   users = () => this.db.collection('users')
-
-
-
 }
 export default Firebase

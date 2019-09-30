@@ -36,16 +36,13 @@ class StoreContainer extends Component {
 
     getCoordinatesFromApi = () => {
         const storeId = this.props.match.params.id
-        console.log(storeId)
 
         axios.get(`${'https://cors-anywhere.herokuapp.com/'}https://api.yelp.com/v3/businesses/${storeId}`, {
-            // required authorization format from API
             headers: {
                 Authorization: `Bearer ${process.env.REACT_APP_YELP_KEY}`,
             }
         })
         .then((res) => {
-            console.log(res.data)
             this.setState({ storeLocation: res.data, loading: false })
         })
         .catch((err) => {
@@ -63,7 +60,6 @@ class StoreContainer extends Component {
 
     renderMap() {
         const {storeLocation} = this.state
-        console.log(storeLocation)
         const StoreContainer = () => {
         return (
             <div id='mapContainer'>
@@ -97,7 +93,6 @@ class StoreContainer extends Component {
                     </div>
                   </div>
 
-                  {/******* div for information ********/}
                   <div className="ui segments">
                     <div className="ui segment">
                         <p>Name Of Store: {storeLocation.name}</p>
@@ -138,7 +133,6 @@ class StoreContainer extends Component {
             return (
                 <section>
                     {this.state.storeLocation ? this.renderMap() : this.renderEmptyState()}
-                    {/* conditional rendering for error state = when the map doesn't want to show up */}
                     {!!this.state.errorState && <h1>{this.state.error}</h1>}
                 </section>
             )
