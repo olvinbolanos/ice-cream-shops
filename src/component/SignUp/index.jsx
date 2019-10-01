@@ -65,7 +65,6 @@ class SignUpFormBase extends Component {
             email,
             passwordOne,
             passwordTwo,
-            image,
             error
         } = this.state
 
@@ -134,7 +133,6 @@ class SignUpFormBase extends Component {
                 <i className="lock icon"></i>
                 <input type="file" 
                 name="image" 
-                value={image}
                 accept="image/png, image/jpeg, image/jpg" 
                 onChange={this.onChange} />            
               </div>

@@ -81,8 +81,7 @@ class ShopList extends Component {
         })
 
         return (
-            <div className="ShopList">{ShopList}</div>
-            
+          <div className="ShopList">{ShopList}</div>
         )
     }
 

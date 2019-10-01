@@ -9,7 +9,8 @@ class Home extends Component {
   state = {
     user: {
       username: '',
-      email: ''
+      email: '',
+      image: ''
     }
   }
 

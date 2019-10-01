@@ -24,7 +24,7 @@ const Navigation = ({authUser}) => (
             <div className="ui button"><NavLink to={ROUTES.ACCOUNT}><i className="address card outline icon"></i>Account</NavLink></div>
         </div>
         <div className="item">
-            <span id="userName">{authUser.username}</span> <SignOutButton />
+            <span id="userName">{authUser.username}</span> <img src={authUser.image} style={ImgIcon} alt="image of user"/> <SignOutButton />
         </div>
     </div>
 )
@@ -46,3 +46,10 @@ const Navigation = ({authUser}) => (
 
 
 export default Navigation
+
+const ImgIcon = {
+  width: '33px',
+  height: '33px',
+  border: '1px solid black',
+  borderRadius: '5px 4px 5px 4px'
+};
