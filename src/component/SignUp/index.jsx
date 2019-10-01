@@ -37,12 +37,13 @@ class SignUpFormBase extends Component {
             } else {
                 return this.props.firebase.db.collection('users').doc(authUser.user.uid).set({
                     username,
-                    email
+                    email,
+                    image
                 })
             }
             }
           ).then(()=> {
-              this.props.history.push(ROUTES.HOME)
+            this.props.history.push(ROUTES.HOME)
           })
           .catch(error => {
               this.setState({error})
@@ -64,6 +65,7 @@ class SignUpFormBase extends Component {
             email,
             passwordOne,
             passwordTwo,
+            image,
             error
         } = this.state
 
@@ -71,7 +73,8 @@ class SignUpFormBase extends Component {
         passwordOne !== passwordTwo ||
         passwordOne === '' ||
         email === '' ||
-        username === '';
+        username === ''
+        ;
         
         return (
            
@@ -131,6 +134,7 @@ class SignUpFormBase extends Component {
                 <i className="lock icon"></i>
                 <input type="file" 
                 name="image" 
+                value={image}
                 accept="image/png, image/jpeg, image/jpg" 
                 onChange={this.onChange} />            
               </div>
