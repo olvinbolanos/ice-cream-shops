@@ -49,7 +49,9 @@ const timer = () => {
                     }
                     activeItem += 1
                     this.setState({ activeItem })
-                break
+                break;
+                default:
+                    console.log('could not send back images')
             }
         }
 
