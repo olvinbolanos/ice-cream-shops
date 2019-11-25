@@ -79,7 +79,7 @@ class StoreContainer extends Component {
         </div>
         )
          }
-            return (
+                return (
                 
                     <div className="flexPics">
                     <section id="mapIntro">
