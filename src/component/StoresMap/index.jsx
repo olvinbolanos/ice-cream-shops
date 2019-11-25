@@ -70,15 +70,15 @@ class StoreContainer extends Component {
                 onClick={this.onMapClicked}>
                     <Marker position={{lat: storeLocation.coordinates.latitude , lng: storeLocation.coordinates.longitude}}
                     icon={{
-                        url:'https://png.pngtree.com/element_pic/00/16/10/205808770672059.jpg',
+                        url:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtbo9xy5vyyahxBRtdplsnZ43j9VeXiJH1A6LxEbmBlZTMJZ7rvw&amp;s',
                         anchor: new this.props.google.maps.Point(16,23),
-                        scaledSize: new this.props.google.maps.Size(25, 25)
+                        scaledSize: new this.props.google.maps.Size(20, 20)
                     }} />
             <InfoWindow onClose={this.onInfoWindowClose}></InfoWindow>
             </Map>
         </div>
         )
-            }
+         }
             return (
                 
                     <div className="flexPics">
@@ -110,8 +110,6 @@ class StoreContainer extends Component {
                         <p>Rating: {storeLocation.rating}</p>
                     </div>
                     </div>
-                    
-                    
                     
                     <div className="flexPics">
                     {

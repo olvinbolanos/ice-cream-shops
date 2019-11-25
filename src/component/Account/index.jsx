@@ -10,7 +10,7 @@ class Account extends Component {
     render() {
         return (
         <div className='accountImg'>
-            <header>
+          <header>
             <div id="topnav" className="navbar navbar-fixed-top">
                 <div className="navbar-inner">
                   <div className="container">

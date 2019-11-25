@@ -71,15 +71,13 @@ label {
   font-family: 'Frank Ruhl Libre', serif;
 }
 
-/* .mapContainer {
-  width: 100%;
-  height: 400px;
+.mapContainer {
+  width: 50%;
+  height: 280px !important;
   padding-top: 2em;
   padding-left: 2em;
   overflow: hidden;
-  background:url("https://www.wichitabyeb.com/wp-content/uploads/2019/02/img_3864.jpg");
-  background-repeat: none;
-} */
+}
 
 .container-fluid {
   width: 600px;
@@ -114,7 +112,8 @@ label {
 .ui.medium.image {
   padding: 2px 3px;
   margin: 3em auto;
-  width: 350px;
+  width: 300px;
+  height: 300px;
 }
 
 .ui.form .field {
@@ -133,7 +132,7 @@ label {
 .ui.message {
   font-size: 1em;
   text-align: center;
-  width: 60%;
+  width: 60vh;
   margin: 10px auto;
   background-color: white;
   font-size: 1rem;
@@ -153,7 +152,7 @@ label {
 
 .ui.stacked.segment {
   padding-bottom: 1.4em;
-  width: 60%;
+  width: 60vh;
   margin: 0 auto;
   box-shadow: 4px 6px 7px black;
 }
