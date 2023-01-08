@@ -1,21 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Frank+Ruhl+Libre&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
+
+
+#userName {
+  font-family: 'Frank Ruhl Libre', serif;
+  font-size: 18px;
+  margin-right: 5px;
+}
+
 .App {
   text-align: center;
 }
 
 .App-logo {
+  animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,3 +41,445 @@
     transform: rotate(360deg);
   }
 }
+
+.searchForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+label {
+  font-family: 'Frank Ruhl Libre', serif;
+  display: inline-block;
+  margin-bottom: .5rem;
+  font-size: 1.32123rem;
+}
+
+#root > div > div:nth-child(1) > div > div:nth-child(1) > div > a {
+  color: white !important;
+  transition: 500ms all linear;
+}
+
+#root > div > div:nth-child(1) > div > div > div > a:hover {
+  color: purple !important;
+}
+
+
+
+.heading_for_user {
+  text-align: center;
+  font-family: 'Frank Ruhl Libre', serif;
+}
+
+.mapContainer {
+  width: 50%;
+  height: 280px !important;
+  padding-top: 2em;
+  padding-left: 2em;
+  overflow: hidden;
+}
+
+.container-fluid {
+  width: 600px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
+
+
+.storeContainer {
+  height: 400px;
+  width: 60%;
+  padding-top: 2em;
+  padding-right: 2em;
+}
+
+.ui.segments {
+  width: 40%;
+  margin: 0em auto;
+  border: 1px solid rgba(34,36,38,.15);
+  box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+  border-radius: .28571429rem;
+  position: relative;
+  display: block;
+  left: 340px;
+  position: relative;
+}
+
+.ui.medium.image {
+  padding: 2px 3px;
+  margin: 3em auto;
+  width: 250px !important;
+  height: 250px !important;
+}
+
+.ui.form .field {
+  margin: 9px 20px 1em;
+}
+
+.ui.form input {
+  width: 250px !important;
+}
+
+.address:hover .card{
+  background-color: none !important;
+  background: none;
+}
+
+.ui.message {
+  font-size: 1em;
+  text-align: center;
+  width: 60vh;
+  margin: 10px auto;
+  background-color: white;
+  font-size: 1rem;
+}
+
+.ui.blue.button {
+  background-color: #00b5ad;
+  color: #fff;
+  text-shadow: none;
+  background-image: none;
+}
+
+#root > div > div:nth-child(3) > div > form > button {
+  position: relative;
+  left: 20px;
+}
+
+.ui.stacked.segment {
+  padding-bottom: 1.4em;
+  width: 60vh;
+  margin: 0 auto;
+  box-shadow: 4px 6px 7px black;
+}
+
+.accountBtn {
+ position: relative;
+ left: 1em;
+}
+
+ .accountHeading  {
+  min-height: 1rem;
+  font-size: 2rem;
+  left: 1rem;
+  position: relative;
+}
+
+
+.topnav {
+	position: fixed;
+	background:#2a2a2a;
+	border:none;
+	top:0;
+	left: 0;
+	width: 100%;
+	box-shadow: 0 0 40px #222;
+	-webkit-box-shadow: 0 0 40px #222;
+	-moz-box-shadow: 0 0 40px #222;
+}
+
+
+.accountImg {
+  background-image: url("https://ichef.bbci.co.uk/images/ic/960xn/p04h5n1h.png");
+  background-repeat: no-repeat;
+  background-position-x: 357px;
+  position:relative;
+	width:100%;
+	height:auto;
+  margin:0;
+}
+
+#root > div > div:nth-child(3) > div > form > div > input{
+  width: 40%;
+}
+
+/**** Landing Page ****/
+.landing {
+  font-family: 'Rubik', sans-serif;
+  font-size: 24px;
+  color: white;
+
+}
+
+.landingTheme {
+  font-family: 'Rubik', sans-serif;
+  color: red;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.landingTimer {
+  font-family: 'Rubik', sans-serif;
+  text-align: left;
+  position: relative;
+  left: 1em;
+  font-size: 2.32323rem;
+}
+
+.landingHeading {
+  font-family: 'Rubik', sans-serif;
+  text-align: left;
+  position: relative;
+  left: 1em;
+  font-size: 3rem;
+}
+
+.landingBody {
+  background: black;
+  max-height: calc(100vh - 5px)
+} 
+
+@media screen and (max-width: 630px) {
+  .landingHeading {
+    font-family: 'Rubik', sans-serif;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    left: 0em;
+    font-size: 2rem;
+  }
+
+  .landingTimer {
+    text-align: center;
+    font-size: 2.32323rem;
+    left: 0;
+  }
+}
+
+
+
+/* Container for slides */
+* {box-sizing: border-box}
+
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+.shopsInfo {
+  margin: 24px auto;
+  text-align: center;
+  box-shadow: 2px 2px 6px black;
+  width: 64%;
+}
+
+.shopsInfo .heading {
+  font-size: 2.714286rem;
+}
+
+.shopsInfo p {
+  font-size: 1.24rem;
+}
+
+
+/* hiding the images */
+/* Next and prev buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: 50%;
+  margin-top: -22px;
+  padding: 2em;
+  color: white;
+  font-weight: bold;
+  font-size: 1.24rem;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* position the next button */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color  */
+
+.prev:hover, .next:hover {
+  background: rgba(0, 0, 0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 2rem;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 1rem;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.flexPics {
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;  
+  margin: -40px 0px;
+}
+
+/* the dot/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 14px;
+  width: 14px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  color: #717171;
+}
+
+.alignTheDots {
+  text-align: center;
+}
+/* image */
+#demo > div > div.carousel-item.active > img {
+  width: 100%;
+  height: 400px;
+}
+
+
+
+.wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -86px;
+  margin-left: -89px;
+  text-align: center;
+}
+
+.pagination-sm .page-link {
+  padding: .35rem 1.5rem;
+  font-size: .875rem;
+  line-height: 2.5;
+}
+
+.page-link {
+  -webkit-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+  -moz-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+  -ms-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+  -o-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+  transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+  display: block;
+  margin: 20px auto;
+  max-width: 180px;
+  text-decoration: none;
+  border-radius: 4px;
+  padding: 20px 30px;
+}
+
+.page-link {
+  color: rgba(30, 22, 54, 0.6);
+  box-shadow: rgba(30, 22, 54, 0.4) 0 0px 0px 2px inset;
+}
+
+.page-link:hover {
+  color: rgba(255, 255, 255, 0.85);
+  box-shadow: rgba(30, 22, 54, 0.7) 0 0px 0px 40px inset;
+}
+
+#root > div > div:nth-child(3) > div > img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  
+}
+
+/* =======================================
+2. Section: Intro for the banner dude
+======================================== */
+
+.default {
+	background:#010101;
+	border-bottom:1px solid #222;
+}
+
+.fixed {
+	position: fixed;
+	background:#2a2a2a;
+	border:none;
+	top:0;
+	left: 0;
+	width: 100%;
+	box-shadow: 0 0 40px #222;
+	-webkit-box-shadow: 0 0 40px #222;
+	-moz-box-shadow: 0 0 40px #222;
+}
+
+section#intro {
+	background: #000  url(https://cdn.pixabay.com/photo/2017/09/24/11/59/password-2781614_960_720.jpg) 50% 0 no-repeat; 
+	position:relative;
+	width:100%;
+	height:auto;
+	margin:0;
+	padding:300px 0 120px;
+}
+
+section#mapIntro {
+  background: #000  url(https://www.wichitabyeb.com/wp-content/uploads/2019/02/img_3864.jpg) 50% 0 no-repeat; 
+	position:relative;
+	width:100%;
+	height:auto;
+	margin:0;
+	padding:0 0 120px;
+}
+
+
+
+@media (min-width: 1024px) {
+	section#intro {
+		background-attachment: fixed;
+	}
+}
+
+section#intro.inner {
+	padding:140px 0 30px;
+}
+
+section#intro.inner h2 strong  {
+	color:#fff;
+}
+section#intro.inner h2  {
+	font-size:32px;
+}
+
+
+section#intro  {
+	text-align:center;
+}
+
+section#intro i  {
+	margin-left:0;
+	text-align:center;
+}
+
+section#intro h1  {
+	color:#fff;
+	font-size:64px;
+  font-weight:700;
+}
+section#intro h2  {
+	color:#ddd;
+	font-size:24px;
+}
+
