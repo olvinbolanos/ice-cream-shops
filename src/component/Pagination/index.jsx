@@ -11,23 +11,23 @@ class Pagination extends Component {
           itemClass += ' active';
         }
         return <li key={i} className={ itemClass }>
-          <a className="page-link" href="#"
+          <button className="page-link" 
           onClick={ e => handleEvent( e, 'clickItem', item )}>
-            { i + 1 }</a>
+            { i + 1 }</button>
         </li>;
       });
   
       return <ul className="pagination pagination-sm justify-content-center">
         <li className="page-item">
-          <a className="page-link" href="#" 
-            onClick={e => handleEvent( e, 'prevItem', {}, items )}>Prev</a>
+          <button className="page-link" 
+            onClick={e => handleEvent( e, 'prevItem', {}, items )}>Prev</button>
         </li>
         {items}
         <li className="page-item">
-          <a className="page-link" href="#"
-            onClick={e => handleEvent( e, 'nextItem', {}, items )}>Next</a>
+          <button className="page-link" 
+            onClick={e => handleEvent( e, 'nextItem', {}, items )}>Next</button>
         </li>
-      </ul>;
+      </ul>
     };
   
     render() {

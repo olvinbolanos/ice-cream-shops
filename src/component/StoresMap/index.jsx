@@ -39,7 +39,7 @@ class StoreContainer extends Component {
 
         axios.get(`${'https://cors-anywhere.herokuapp.com/'}https://api.yelp.com/v3/businesses/${storeId}`, {
             headers: {
-                Authorization: `Bearer ${process.env.REACT_APP_YELP_KEY}`,
+                Authorization: `Bearer ${"PnRdOKRmHRpmECP-0W77hciytB1Zz_-ErKkRw5wjCVZe6GdAUnugblsI_gzf7gUws9hGHhrWder7PjXBWVlJTuU6KzSj7bgGnlqfnSclasAlo5iaIMZtJznpqXy-Y3Yx"}`,
             }
         })
         .then((res) => {
@@ -52,9 +52,11 @@ class StoreContainer extends Component {
 
     renderEmptyState() {
         return (
-            <h2 className='faultyInfo'>
-               `Hang tight! We are working on getting you the list of reviews about the store you requested! 
-            </h2>
+            <div>
+              <h2 className='faultyInfo'>
+                `Hang tight! We are working on getting you the list of reviews about the store you requested! 
+              </h2>
+            </div>
         )
     }
 
@@ -74,15 +76,14 @@ class StoreContainer extends Component {
                         anchor: new this.props.google.maps.Point(16,23),
                         scaledSize: new this.props.google.maps.Size(20, 20)
                     }} />
-            <InfoWindow onClose={this.onInfoWindowClose}></InfoWindow>
-            </Map>
-        </div>
-        )
-         }
-                return (
-                
-                    <div className="flexPics">
-                    <section id="mapIntro">
+                <InfoWindow onClose={this.onInfoWindowClose}></InfoWindow>
+                </Map>
+            </div>
+        )};
+
+        return (
+            <div className="flexPics">
+                <section id="mapIntro">
                     <div className="slogan">
                     <div className="icon">
                         <i className="icon-beaker icon-10x"></i>
@@ -115,25 +116,28 @@ class StoreContainer extends Component {
                     {
                         storeLocation.photos.map((pics, i) => {
                           return(
-                            <img key={i} className="ui medium bordered" src={pics} alt="icecream" />
+                            <div>
+                              <img key={i} className="ui medium bordered" src={pics} alt="icecream" />
+                            </div>
                           )
                         })
                     } 
                     </div>
                 </div>
-                </section>
-            </div>
-            
-            )
-        }
+            </section>
+        </div>
+        )
+    }
 
         render() {
             return (
-                <section>
-                    {this.state.storeLocation ? this.renderMap() : this.renderEmptyState()}
-                    {!!this.state.errorState && <h1>{this.state.error}</h1>}
-                </section>
-            )
+                <div>
+                    <section>
+                      {this.state.storeLocation ? this.renderMap() : this.renderEmptyState()}
+                      {!!this.state.errorState && <h1>{this.state.error}</h1>}
+                    </section>
+                </div>
+            )    
         }
     }
 

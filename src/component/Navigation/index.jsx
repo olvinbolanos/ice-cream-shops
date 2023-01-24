@@ -24,7 +24,7 @@ const Navigation = ({authUser}) => (
             <div className="ui button"><NavLink to={ROUTES.ACCOUNT}><i className="address card outline icon"></i>Account</NavLink></div>
         </div>
         <div className="item">
-            <span id="userName">{authUser.username}</span> <img src={authUser.image} style={ImgIcon} alt="image of user"/> <SignOutButton />
+            <span id="userName">{authUser.username}</span> <img src={authUser.image} style={ImgIcon} alt="user"/> <SignOutButton />
         </div>
     </div>
 )

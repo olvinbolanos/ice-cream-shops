@@ -4,18 +4,23 @@
   "private": true,
   "dependencies": {
     "axios": "^1.2.2",
-    "firebase": "^9.15.0",
+    "firebase": "^9.16.0",
+    "firebase-admin": "^11.5.0",
+    "firebase-tools": "^11.21.0",
+    "fsevents": "^2.3.2",
     "google-maps-react": "^2.0.6",
-    "react": "^15.0.0",
-    "react-dom": "~0.14.8 || ^15.0.0 || ^16.0.0 || ^17.0.2 || ^18.2.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^2.1.3",
     "semantic-ui-css": "^2.5.0",
     "semantic-ui-react": "^2.1.4 || ^3.1.3"
   },
+  "engines": {
+    "node": "16"
+  },
   "peerDependencies": {
-    "react-dom": "~0.14.8 || ^15.0.0 || ^16.0.0 || ^17.0.2 || ^18.2.0",
     "semantic-ui-react": "^2.1.4 || ^3.1.3"
   },
   "scripts": {
