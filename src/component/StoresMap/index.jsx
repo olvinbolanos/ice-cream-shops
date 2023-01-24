@@ -4,6 +4,7 @@ import {withRouter} from 'react-router-dom'
 import {withFirebase} from '../Firebase'
 import axios from 'axios'
 import '../../App.css'
+import 'cors-anywhere'
 
 
 const style = {
@@ -35,10 +36,12 @@ class StoreContainer extends Component {
     }
 
     getCoordinatesFromApi = () => {
+        
         const storeId = this.props.match.params.id
-
         axios.get(`${'https://cors-anywhere.herokuapp.com/'}https://api.yelp.com/v3/businesses/${storeId}`, {
             headers: {
+                requireHeader: ['origin', 'x-requested-with'],
+                removeHeaders: ['cookie', 'cookie2'],
                 Authorization: `Bearer ${"PnRdOKRmHRpmECP-0W77hciytB1Zz_-ErKkRw5wjCVZe6GdAUnugblsI_gzf7gUws9hGHhrWder7PjXBWVlJTuU6KzSj7bgGnlqfnSclasAlo5iaIMZtJznpqXy-Y3Yx"}`,
             }
         })

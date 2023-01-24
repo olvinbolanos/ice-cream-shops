@@ -28,7 +28,7 @@ This website is made with all the CRUD functionality and  uses an api to render 
 
 
 ## Site
-  If you want to see this site online click here and it will take you there for full view. Thanks for checking out my site and I hope you enjoy this website. 
+  If you want to see this site online click here and it will take you there for full view. You may have a "CORS Needed Action for Approval," please go to https://cors-anywhere.herokuapp.com/corsdemo and click developer tab to gain access to CORS cross-site scripting since this site is only for production. Thanks for checking out my site and I hope you enjoy this website. 
   website address: 
 ```
 ---
