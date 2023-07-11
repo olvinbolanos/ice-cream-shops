@@ -1,18 +1,22 @@
-_# IceCream Finder
-javascript
-React
-React.Context
-Bootstrap4
-CSS
-Firebase
-Semantic-UI
-Google-Maps-React
+# IceCream Finder Near Home Plate
+
+## Code Written In:
++ javascript
++ React
++ React.Context
++ Bootstrap4
++ CSS
++ Firebase
++ Semantic-UI
++ Google-Maps-React
 
 ## Project
 
 
 ![MacDown Screenshot](https://i.imgur.com/UMwyjIZ.png)
 ## Introduction
+Follow Link for Web Access through Google's firebase deployment: 
+[Ice Cream Shops](https://notes-app-c0183.web.app/) 
 
 This website is made with all the CRUD functionality and  uses an api to render all the information from the Yelp developer site. It fetches the information from the front-end and stores the user's information on Firebase. This was basically a fun site to build and it presented me to Firebase storage and authentication. Which is really easy to use and good for deploying a project. 
 
