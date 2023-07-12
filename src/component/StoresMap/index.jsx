@@ -42,7 +42,7 @@ class StoreContainer extends Component {
             headers: {
                 requireHeader: ['origin', 'x-requested-with'],
                 removeHeaders: ['cookie', 'cookie2'],
-                Authorization: `Bearer ${"PnRdOKRmHRpmECP-0W77hciytB1Zz_-ErKkRw5wjCVZe6GdAUnugblsI_gzf7gUws9hGHhrWder7PjXBWVlJTuU6KzSj7bgGnlqfnSclasAlo5iaIMZtJznpqXy-Y3Yx"}`,
+                Authorization: `Bearer ${process.env.REACT_APP_YELP_KEY}`,
             }
         })
         .then((res) => {

@@ -5,18 +5,19 @@ import 'firebase/compat/storage'
 
 
 
-
 const config = {
-  apiKey: "AIzaSyDDBex_RGsto2t38lKsB4GTEAGcxvf8ATw",
-  authDomain: "notes-app-c0183.firebaseapp.com",
-  databaseURL: "https://notes-app-c0183.firebaseio.com",
-  projectId: "notes-app-c0183",
-  storageBucket: "notes-app-c0183.appspot.com",
-  messagingSenderId: "563617119233",
-  appId: "1:563617119233:web:a8cfdb8d82a86eda",
-  yelpKey: "PnRdOKRmHRpmECP-0W77hciytB1Zz_-ErKkRw5wjCVZe6GdAUnugblsI_gzf7gUws9hGHhrWder7PjXBWVlJTuU6KzSj7bgGnlqfnSclasAlo5iaIMZtJznpqXy-Y3Yx",
-  googleKey:  "AIzaSyDDBex_RGsto2t38lKsB4GTEAGcxvf8ATw"
+  apiKey: process.env.REACT_APP_GOOGLE_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  databaseURL: process.env.REACT_APP_DATABASE_URL,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
+  yelpKey: process.env.REACT_APP_YELP_KEY,
+  googleKey: process.env.REACT_APP_GOOGLE_KEY
 };
+
+
 
 class Firebase {
   constructor() {
